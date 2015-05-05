@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.i3xx.step</groupId>
+  <artifactId>org.i3xx.step.zero</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+  <url>http://maven.apache.org</url>
+  <description>Workflow step sequencer initializing</description>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<project.inceptionYear>2014</project.inceptionYear>
+	<org.i3xx.util.basic.version>0.0.1-SNAPSHOT</org.i3xx.util.basic.version>
+	<org.i3xx.util.general.setup.version>0.0.1-SNAPSHOT</org.i3xx.util.general.setup.version>
+	<org.i3xx.util.platform.version>0.0.1-SNAPSHOT</org.i3xx.util.platform.version>
+  </properties>
+  
+  <parent>
+    <groupId>org.i3xx.project</groupId>
+    <artifactId>parent-project</artifactId>
+    <version>0.0.6-SNAPSHOT</version>
+  </parent>
+  
+  <dependencies>
+	<dependency>
+		<groupId>org.i3xx.util</groupId>
+		<artifactId>org.i3xx.util.platform</artifactId>
+		<version>${org.i3xx.util.platform.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.i3xx.util</groupId>
+		<artifactId>org.i3xx.util.general.setup</artifactId>
+		<version>${org.i3xx.util.general.setup.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils-core</artifactId>
+		<version>1.8.3</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.felix</groupId>
+		<artifactId>org.apache.felix.configadmin</artifactId>
+		<version>1.8.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.karaf.shell</groupId>
+		<artifactId>org.apache.karaf.shell.console</artifactId>
+		<version>3.0.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>core</artifactId>
+		<version>4.3.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-core</artifactId>
+		<version>1.2.3</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>maven-bundle-plugin</artifactId>
+			<version>2.3.7</version>
+			<extensions>true</extensions>
+			<configuration>
+				<instructions>
+					
+					<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+					<Bundle-Name>${project.name}</Bundle-Name>
+					<Bundle-Version>${project.version}</Bundle-Version>
+					<Bundle-Activator>org.i3xx.step.zero.core.impl.activator.Zero</Bundle-Activator>
+					
+					<Export-Package>
+						org.i3xx.step.zero.core.impl.activator,
+						org.i3xx.step.zero.core.impl.cmd,
+						org.i3xx.step.zero.security,
+						org.i3xx.step.zero.security.impl.shiro,
+						org.i3xx.step.zero.security.model,
+						org.i3xx.step.zero.service.impl.cx,
+						org.i3xx.step.zero.service.impl.mandator,
+						org.i3xx.step.zero.service.model.cx,
+						org.i3xx.step.zero.service.model.mandator,
+					</Export-Package>
+					<Import-Package>
+						org.i3xx.util.basic.core;version="${org.i3xx.util.basic.version}",
+						org.i3xx.util.basic.io;version="${org.i3xx.util.basic.version}",
+						org.i3xx.util.basic.platform;version="${org.i3xx.util.basic.version}",
+						org.i3xx.util.general.setup.impl;version="${org.i3xx.util.general.setup.version}",
+						org.i3xx.util.general.setup.model;version="${org.i3xx.util.general.setup.version}",
+						org.apache.commons.codec.binary,
+						org.apache.karaf.shell.commands,
+						org.apache.karaf.shell.console,
+						org.apache.karaf.shell.console.completer,
+						org.apache.shiro,
+						org.apache.shiro.authc,
+						org.apache.shiro.authz,
+						org.apache.shiro.cache,
+						org.apache.shiro.crypto,
+						org.apache.shiro.crypto.hash,
+						org.apache.shiro.mgt,
+						org.apache.shiro.realm,
+						org.apache.shiro.session,
+						org.apache.shiro.subject,
+						org.apache.shiro.util,
+						org.osgi.service.blueprint,
+						org.osgi.service.cm,
+						org.osgi.framework,
+						org.osgi.util.tracker,
+						org.slf4j
+					</Import-Package>
+					<Private-Package></Private-Package>
+					<!--<Export-Service></Export-Service>-->
+				</instructions>
+			</configuration>
+		</plugin>
+	</plugins>
+	
+	<resources>
+  		<resource>
+  			<directory></directory>
+  			<includes>
+  				<include>OSGI-INF/**/*.*</include>
+  			</includes>
+  		</resource>
+  	</resources>
+  </build>
+  
+  <name>NordApp OfficeBase :: zero</name>
+</project>
+  

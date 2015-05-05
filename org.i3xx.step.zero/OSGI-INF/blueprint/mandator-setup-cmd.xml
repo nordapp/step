@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+
+<blueprint 
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.osgi.org/xmlns/blueprint/v1.0.0
+		http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+	">
+	
+    <command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.1.0">
+        
+		<!--
+		 !  Starts a new mandator instance
+		 !-->
+        <command>
+            <action class="org.i3xx.step.zero.core.impl.cmd.StartMandatorCommand"/>
+            <completers>
+                <ref component-id="zeroSetupCompleter"/>
+            </completers>
+        </command>
+        
+		<!--
+		 !  Stops a mandator instance
+		 !-->
+        <command>
+            <action class="org.i3xx.step.zero.core.impl.cmd.StopMandatorCommand"/>
+            <completers>
+                <ref component-id="zeroSetupCompleter"/>
+            </completers>
+        </command>
+        
+		<!--
+		 !  List all mandator instances
+		 !-->
+        <command>
+            <action class="org.i3xx.step.zero.core.impl.cmd.ListMandatorCommand"/>
+            <completers>
+                <ref component-id="zeroSetupCompleter"/>
+            </completers>
+        </command>
+        
+		<!--
+		 !  List all mandator configurations
+		 !-->
+        <command>
+            <action class="org.i3xx.step.zero.core.impl.cmd.ListMandatorConfigCommand"/>
+            <completers>
+                <ref component-id="zeroSetupCompleter"/>
+            </completers>
+        </command>
+        
+		<!--
+		 !  Setup a new mandator
+		 !-->
+        <command>
+            <action class="org.i3xx.step.zero.core.impl.cmd.SetupMandatorCommand"/>
+            <completers>
+                <ref component-id="zeroSetupCompleter"/>
+            </completers>
+        </command>
+        
+		<!--
+		 !  Destroy a mandator
+		 !-->
+        <command>
+            <action class="org.i3xx.step.zero.core.impl.cmd.DestroyMandatorCommand"/>
+            <completers>
+                <ref component-id="zeroSetupCompleter"/>
+            </completers>
+        </command>
+    </command-bundle>
+	
+	<!-- Completer for the command bundle -->
+    <bean id="zeroSetupCompleter" class="org.i3xx.step.zero.core.impl.cmd.SetupCompleter"/>
+	
+</blueprint>
