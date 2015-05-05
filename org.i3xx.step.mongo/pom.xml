@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.i3xx.step</groupId>
+  <artifactId>org.i3xx.step.mongo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <url>http://maven.apache.org</url>
+  <name>NordApp OfficeBase :: mongo</name>
+  
+  <parent>
+    <groupId>org.i3xx.project</groupId>
+    <artifactId>parent-project</artifactId>
+    <version>0.0.6-SNAPSHOT</version>
+  </parent>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<project.inceptionYear>2014</project.inceptionYear>
+	<org.i3xx.util.basic.version>0.0.1-SNAPSHOT</org.i3xx.util.basic.version>
+	<org.i3xx.step.zero.version>0.0.2-SNAPSHOT</org.i3xx.step.zero.version>
+  </properties>
+  
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>maven-bundle-plugin</artifactId>
+			<version>2.3.7</version>
+			<extensions>true</extensions>
+			<configuration>
+				<instructions>
+				
+					<Bundle-Activator>org.i3xx.step.mongo.core.activator.Mongo</Bundle-Activator>
+					<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+					<Bundle-Name>${project.name}</Bundle-Name>
+					<Bundle-Version>${project.version}</Bundle-Version>
+					
+					<Export-Package>
+						org.i3xx.step.mongo.core.activator,
+						org.i3xx.step.mongo.core.model,
+						org.i3xx.step.mongo.core.impl,
+						org.i3xx.step.mongo.core.util,
+						org.i3xx.step.mongo.service.model,
+						org.i3xx.step.mongo.service.impl
+					</Export-Package>
+					<Import-Package>
+						com.mongodb.gridfs,
+						com.mongodb,
+						com.mongodb.util, 
+						javax.security.auth.x500,
+						org.apache.commons.codec.binary,
+						org.bson.types,
+						org.i3xx.step.zero.service.impl.mandator;version="${org.i3xx.step.zero.version}",
+						org.i3xx.step.zero.service.model.mandator;version="${org.i3xx.step.zero.version}",
+						org.osgi.framework,
+						org.osgi.util.tracker,
+						org.slf4j,
+						org.w3c.dom,
+						org.xml.sax
+					</Import-Package>
+					<Private-Package></Private-Package>
+					<!--<Export-Service></Export-Service>-->
+				</instructions>
+			</configuration>
+		</plugin>
+		
+		<!-- The test needs this configuration -->
+		<plugin>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<configuration>
+				<systemPropertyVariables>
+					<workspace.home>${basedir}</workspace.home>
+				</systemPropertyVariables>
+			</configuration>		
+		</plugin>
+		
+	</plugins>
+	
+  	<resources>
+  		<!--<resource>
+  			<directory></directory>
+  			<includes>
+  				<include>OSGI-INF/**/*.*</include>
+  			</includes>
+  		</resource>-->
+  		<!--<resource>
+  			<directory></directory>
+  			<includes>
+  				<include>LICENSE/**/*.*</include>
+  			</includes>
+  		</resource>-->
+  	</resources>
+  	
+  </build>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.osgi</groupId>
+  		<artifactId>core</artifactId>
+  		<version>4.3.0</version>
+  	</dependency>
+	<dependency>
+		<groupId>org.i3xx.step</groupId>
+		<artifactId>org.i3xx.step.zero</artifactId>
+		<type>bundle</type>
+		<version>0.0.2-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.3.1</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-codec</groupId>
+		<artifactId>commons-codec</artifactId>
+		<version>1.10</version>
+	</dependency>
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>2.13.0</version>
+	</dependency>
+  </dependencies>
+  <packaging>bundle</packaging>
+  <description>MongoDB integration to step</description>
+</project>
