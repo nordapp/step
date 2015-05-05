@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+
+<blueprint 
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.osgi.org/xmlns/blueprint/v1.0.0
+		http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+		http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0
+		http://svn.apache.org/repos/asf/aries/trunk/blueprint/blueprint-cm/src/main/resources/org/apache/aries/blueprint/compendium/cm/blueprint-cm-1.1.0.xsd
+	">
+	    
+    <!-- The setup service -->
+    <reference id="zeroMandatorService" interface="org.i3xx.step.zero.service.model.mandator.MandatorService" />
+    <reference id="symbolService" interface="org.i3xx.util.symbol.service.model.SymbolService" />
+    
+    <!--
+     !   The deploy service
+     !   
+     !   The deploy service provides a deploy mechanism for source code (JS, CSS, HTML)
+     !-->
+    <service ref="dueDeployService" interface="org.i3xx.step.due.service.model.DeployService" />
+    <bean id="dueDeployService" class="org.i3xx.step.due.service.impl.DeployServiceImpl" init-method="startUp" activation="eager">
+    	<property name="bundleContext" ref="blueprintBundleContext"/>
+    </bean>
+    
+    <!--
+     !   The property service
+     !
+     !   The property service provides the reading of a property without any processing.
+     !-->
+    <service ref="duePropertyService" interface="org.i3xx.step.due.service.model.PropertyService" />
+    <bean id="duePropertyService" class="org.i3xx.step.due.service.impl.PropertyServiceImpl" init-method="startUp" activation="eager">
+    	<property name="bundleContext" ref="blueprintBundleContext"/>
+    </bean>
+    
+    <!--
+     !   The resource service
+     !
+     !   The resource service provides the reading of a resource without any processing.
+     !-->
+    <service ref="dueResourceService" interface="org.i3xx.step.due.service.model.ResourceService" />
+    <bean id="dueResourceService" class="org.i3xx.step.due.service.impl.ResourceServiceImpl" init-method="startUp" activation="eager">
+    	<property name="bundleContext" ref="blueprintBundleContext"/>
+    </bean>
+    
+    <!--
+     !   The velocity service
+     !   
+     !   The velocity service provides the reading of a resource. The resource stream is
+     !   processed by the velocity engine.
+     !-->
+    <service ref="dueVelocityService" interface="org.i3xx.step.due.service.model.VelocityService" />
+    <bean id="dueVelocityService" class="org.i3xx.step.due.service.impl.VelocityServiceImpl" init-method="startUp" activation="eager">
+    	<property name="bundleContext" ref="blueprintBundleContext"/>
+    </bean>
+    
+    <!--
+     !   The session0 service
+     !   
+     !   The service provides a factory mechanism to create the session related to the
+     !   mandator. This session is called a session0. Also the velocity engine and the
+     !   base index of the engine base are created and bound to the created session0.
+     !   
+     !   The mandator tracker and the session service tracker can initiate this.
+     !-->
+    <service ref="dueSession0Service" interface="org.i3xx.step.due.service.model.Session0Service" />
+    <bean id="dueSession0Service" class="org.i3xx.step.due.service.impl.Session0ServiceImpl" init-method="startUp" activation="eager">
+    	<property name="bundleContext" ref="blueprintBundleContext"/>
+    </bean>
+    
+    <!--
+     !   The session service
+     !   
+     !   The session service initiates the creation of the session0 for every
+     !   available mandator (defined and started). If a mandator is started
+     !   later, the mandator tracker will handle this.
+     !-->
+    <service ref="dueSessionService">
+    	<interfaces>
+    		<value>org.i3xx.step.due.service.model.SessionService</value>
+    		<value>org.osgi.service.event.EventHandler</value>
+    	</interfaces>
+		<service-properties> 
+			<entry key="event.topics" value="session-*"/> 
+		</service-properties> 
+    </service>
+    <bean id="dueSessionService" class="org.i3xx.step.due.service.impl.SessionServiceImpl" init-method="startUp" activation="eager">
+    	<property name="bundleContext" ref="blueprintBundleContext"/>
+    </bean>
+    
+    <!--
+     !   The session starter
+     !-->
+    <bean class="org.i3xx.step.due.service.impl.ActivatorBean" init-method="startUp" destroy-method="cleanUp" activation="eager">
+    	<property name="bundleContext" ref="blueprintBundleContext"/>
+    	
+    	<property name="serviceDummy1" ref="zeroMandatorService"/>
+    	<property name="serviceDummy2" ref="symbolService"/>
+    	<property name="serviceDummy3" ref="dueSession0Service"/>
+    	<property name="serviceDummy4" ref="dueSessionService"/>
+    </bean>
+    
+    
+</blueprint>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Card-GroupId: group-2
+Card-ArtifactId: artifact-1
+Card-Version: 1.0.0
+Card-SymbolicName: group-2.artifact-1.upload
+Card-Name: hello
+Card-Function: i3xx.group-2.artifact-1.upload
+Card-Multiple:
+Card-Priority: 5
+Card-Transaction: 0
+Card-Order: 0
+Card-Import:
+Card-Export: 

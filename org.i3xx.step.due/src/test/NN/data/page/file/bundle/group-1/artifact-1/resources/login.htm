@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Login</title>
+<script type="text/javascript" src="/page/$subject_mandator_id/$subject_group_id/$subject_artifact_id/test.js"></script>
+</head>
+<body>
+<p>Login</p>
+<p>The mandator '$subject_mandator_id' logged in.</p>
+
+<table>
+<tr><td>Mandator</td><td>$subject_mandator_id</td></tr>
+<tr><td>Group</td><td>$subject_group_id</td></tr>
+<tr><td>Artifact</td><td>$subject_artifact_id</td></tr>
+<tr><td>Session</td><td>$session_cert_id</td></tr>
+<tr><td>Alive</td><td>$session_is_alive</td></tr>
+<tr><td>Valid</td><td>$session_is_valid</td></tr>
+</table>
+
+<button onClick="callme('group-1.artifact-3.hello', false)">Call</button>
+<button onClick="readme()">Data</button>
+<button onClick="logout()">Logout</button>
+
+<iframe id="result" src="about:blank"></iframe>
+
+</body>
+</html>
