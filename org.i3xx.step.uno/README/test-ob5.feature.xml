@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+	<feature name="test-ob5" version="0.0.1-SNAPSHOT">
+		<bundle start-level='30' start='true'>mvn:com.google.code.gson/gson/2.3.1</bundle>
+		<bundle start-level='30' start='true'>mvn:commons-codec/commons-codec/1.10</bundle>
+		<bundle start-level='30' start='true'>mvn:commons-collections/commons-collections/3.2.1</bundle>
+		<bundle start-level='30' start='true'>mvn:commons-beanutils/commons-beanutils/1.8.3</bundle>
+
+		<bundle start-level='30' start='true'>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/2.6.0_2</bundle>
+		<bundle start-level='30' start='true'>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.rhino/1.7R4_1</bundle>
+
+		<bundle start-level='50' start='true'>mvn:org.i3xx.util/org.i3xx.util.core/0.5.8-SNAPSHOT</bundle>
+		<bundle start-level='50' start='true'>mvn:org.i3xx.util/org.i3xx.util.store/1.0.4-SNAPSHOT</bundle>
+		<!-- <bundle start-level='50' start='true'>mvn:org.i3xx.step.perm/org.i3xx.step.perm/0.0.1</bundle> -->
+		<bundle start-level='50' start='true'>mvn:org.i3xx.step/org.i3xx.step.zero/0.0.2-SNAPSHOT</bundle>
+		<bundle start-level='50' start='true'>mvn:org.i3xx.step/org.i3xx.step.uno/0.0.1-SNAPSHOT</bundle>
+        <bundle start-level='50' start='true'>mvn:org.i3xx.step/org.i3xx.step.due/0.0.1-SNAPSHOT</bundle>
+	</feature>
+</features>

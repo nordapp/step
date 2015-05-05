@@ -1,0 +1,3 @@
+The package com.cloudbees.util.rhino.sandbox
+has the LICENSE in the file LICENSE.txt in this
+directory.

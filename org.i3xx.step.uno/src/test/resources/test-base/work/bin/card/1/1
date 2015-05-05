@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Card-GroupId: group-1
+Card-ArtifactId: artifact-1
+Card-Version: 1.0.0
+Card-SymbolicName: group-1.artifact-1.Step-1
+Card-Name: Step-1
+Card-Function: i3xx.group-1.artifact-1.activate
+Card-Multiple:
+Card-Priority: 5
+Card-Transaction: 0
+Card-Order: 6

@@ -1,0 +1,12 @@
+0    [main] DEBUG org.i3xx.step.uno.impl.ScriptLoader  - Loading the script 'D:\eclipse\workspace\org.i3xx.step.uno\src\test\properties\js\i3xx-small.js' at '146022688788309858303670351418210371658' starts.
+0    [main] DEBUG org.i3xx.step.uno.impl.ScriptLoader  - Loading the script 'D:\eclipse\workspace\org.i3xx.step.uno\src\test\properties\js\test\Test.js' at '146022688788309858303670351418210371658' starts.
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:0, p:-1the card name:Card 1, function:fCard1, counter:0, multiple:false, priority:5, order:3, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:1, p:-2the card name:Card 2, function:fCard2, counter:0, multiple:false, priority:5, order:4, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:0, p:-1the card name:Card 3, function:fCard3, counter:0, multiple:false, priority:5, order:1, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:3, p:-4the card name:Card 4, function:fCard4, counter:0, multiple:false, priority:5, order:9, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:3, p:-4the card name:Card 5, function:fCard5, counter:0, multiple:false, priority:5, order:7, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:3, p:-4the card name:Card 6, function:fCard6, counter:0, multiple:false, priority:5, order:2, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:3, p:-4the card name:Card 7, function:fCard7, counter:0, multiple:false, priority:5, order:5, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:3, p:-4the card name:Card 8, function:fCard8, counter:0, multiple:false, priority:5, order:6, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:0, p:-1the card name:Card 9, function:fCard9, counter:0, multiple:false, priority:5, order:0, transaction:0
+0    [main] TRACE org.i3xx.step.uno.impl.SequencerImpl  - Add i:9, p:-10the card name:Card 0, function:fCard0, counter:0, multiple:false, priority:5, order:8, transaction:0
