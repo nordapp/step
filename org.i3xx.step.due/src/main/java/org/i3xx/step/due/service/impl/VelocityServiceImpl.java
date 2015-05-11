@@ -74,18 +74,18 @@ public class VelocityServiceImpl implements VelocityService {
 		
 		Mandator mandator = MandatorServiceImpl.getMandator(bundleContext, mandatorId);
 		if(mandator==null)
-			throw new IOException("Not found: The requested mandator is not available at this system.");
+			throw new IOException("Not found: The requested mandator '"+mandatorId+"' is not available at this system.");
 		
 		FilePath filePath = FilePath.append( mandator.getPath(), "data/page/file/bundle", groupId, artifactId, path );
 		File file = filePath.toFile();
 		
 		if( !file.exists() ){
 			logger.trace("The resource '{}' is not available.", file.getAbsolutePath());
-			throw new IOException("Not found: The requested resource is not available at this system.");
+			throw new IOException("Not found: The requested resource '"+file.getName()+"' is not available at this system.");
 		}
 		if( !file.isFile() ){
 			logger.trace("The resource '{}' is no file.", file.getAbsolutePath());
-			throw new IOException("Illegal: The requested resource is not a file.");
+			throw new IOException("Illegal: The requested resource '"+file.getName()+"' is not a file.");
 		}
 		
 		//Get the '0' session
@@ -131,18 +131,18 @@ public class VelocityServiceImpl implements VelocityService {
 		
 		Mandator mandator = MandatorServiceImpl.getMandator(bundleContext, mandatorId);
 		if(mandator==null)
-			throw new IOException("Not found: The requested mandator is not available at this system.");
+			throw new IOException("Not found: The requested mandator '"+mandatorId+"' is not available at this system.");
 		
 		FilePath filePath = FilePath.append( mandator.getPath(), "data/page/file/bundle", groupId, artifactId, path );
 		File file = filePath.toFile();
 		
 		if( !file.exists() ){
 			logger.trace("The resource '{}' is not available.", file.getAbsolutePath());
-			throw new IOException("Not found: The requested resource is not available at this system.");
+			throw new IOException("Not found: The requested resource '"+file.getName()+"' is not available at this system.");
 		}
 		if( !file.isFile() ){
 			logger.trace("The resource '{}' is no file.", file.getAbsolutePath());
-			throw new IOException("Illegal: The requested resource is not a file.");
+			throw new IOException("Illegal: The requested resource '"+file.getName()+"' is not a file.");
 		}
 		
 		

@@ -29,6 +29,21 @@ public interface ResourceService {
 	
 	public static final int FILE_RESOURCE = 1;
 	
+	
+	/*
+	 * Returns true if the resource is available, false otherwise
+	 * 
+	 * @param mandatorId The mandator that holds the resource
+	 * @param groupId The id of the group
+	 * @param artifactId The id of the artifact
+	 * @param path The resource path relative to the mandator root
+	 * @return
+	 * @throws IOException
+	 */
+	//currently not implemented because, if you need the resource try to get it and deal
+	//with the exception thrown if the resource is not there.
+	//boolean available(String mandatorId, String groupId, String artifactId, String path);
+	
 	/**
 	 * Gets a resource as a String
 	 * 
@@ -39,7 +54,7 @@ public interface ResourceService {
 	 * @param type The type of the resource
 	 * @param props Properties (optional)
 	 * @return
-	 * @throws IOException
+	 * @throws IOException If the resource cannot be read
 	 */
 	String getResource(String mandatorId, String groupId, String artifactId, String path, int type, Map<String, String> props) throws IOException;
 	
@@ -53,7 +68,7 @@ public interface ResourceService {
 	 * @param type The type of the resource
 	 * @param props Properties (optional)
 	 * @return
-	 * @throws IOException
+	 * @throws IOException If the resource cannot be read
 	 */
 	InputStream getResourceAsStream(String mandatorId, String groupId, String artifactId, String path, int type, Map<String, String> props) throws IOException;
 }
