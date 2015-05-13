@@ -23,6 +23,9 @@ package org.i3xx.step.due.service.impl;
 
 import java.io.IOException;
 
+import org.i3xx.step.due.service.model.InstPropertyService;
+import org.i3xx.step.due.service.model.Session0Service;
+import org.i3xx.step.due.service.model.SessionService;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +48,13 @@ public class ActivatorBean {
 	/** The osgi bundle context */
 	private BundleContext bundleContext;
 	
-	private Object[] dummy;
+	/** The service */
+	private Session0Service session0Service;
+	/** The service */
+	private SessionService sessionService;
+	
+	/** The service */
+	private InstPropertyService instPropertyService;
 	
 	/**  */
 	private InitializeMandatorTrackerImpl mandatorTracker;
@@ -58,7 +67,9 @@ public class ActivatorBean {
 	
 	public ActivatorBean() {
 		bundleContext = null;
-		dummy = new Object[4];
+		session0Service = null;
+		sessionService = null;
+		instPropertyService = null;
 		
 		mandatorTracker = null;
 		sessionServiceTracker = null;
@@ -75,7 +86,8 @@ public class ActivatorBean {
 		//
 		// Setup the mandator session
 		//
-		mandatorTracker = new InitializeMandatorTrackerImpl(bundleContext);
+		mandatorTracker = new InitializeMandatorTrackerImpl(bundleContext,
+				sessionService, session0Service, instPropertyService);
 		mandatorTracker.open();
 		
 		//
@@ -85,7 +97,7 @@ public class ActivatorBean {
 		//
 		// @see /org.i3xx.step.uno/OSGI-INF/blueprint/initialize-resource-service.xml
 		//
-		sessionServiceTracker = new InitializeSessionServiceTrackerImpl(bundleContext);
+		sessionServiceTracker = new InitializeSessionServiceTrackerImpl(bundleContext, session0Service);
 		sessionServiceTracker.open();
 		
 		//
@@ -99,6 +111,7 @@ public class ActivatorBean {
 		//
 		PropertyScanner scan = new PropertyScanner();
 		scan.setBundleContext(bundleContext);
+		scan.setInstPropertyService(instPropertyService);
 		scan.scanAll();
 	}
 	
@@ -128,28 +141,45 @@ public class ActivatorBean {
 		this.bundleContext = bundleContext;
 	}
 	
-	/** A service dummy */
-	public Object getServiceDummy1() { return dummy[0]; }
-	
-	/** A service dummy */
-	public void setServiceDummy1(Object rc) { dummy[0] = rc; }
-	
-	/** A service dummy */
-	public Object getServiceDummy2() { return dummy[1]; }
-	
-	/** A service dummy */
-	public void setServiceDummy2(Object rc) { dummy[1] = rc; }
-	
-	/** A service dummy */
-	public Object getServiceDummy3() { return dummy[2]; }
-	
-	/** A service dummy */
-	public void setServiceDummy3(Object rc) { dummy[2] = rc; }
-	
-	/** A service dummy */
-	public Object getServiceDummy4() { return dummy[3]; }
-	
-	/** A service dummy */
-	public void setServiceDummy4(Object rc) { dummy[3] = rc; }
+	/**
+	 * @return the session0Service
+	 */
+	public Session0Service getSession0Service() {
+		return session0Service;
+	}
 
+	/**
+	 * @param session0Service the session0Service to set
+	 */
+	public void setSession0Service(Session0Service session0Service) {
+		this.session0Service = session0Service;
+	}
+
+	/**
+	 * @return the sessionService
+	 */
+	public SessionService getSessionService() {
+		return sessionService;
+	}
+
+	/**
+	 * @param sessionService the sessionService to set
+	 */
+	public void setSessionService(SessionService sessionService) {
+		this.sessionService = sessionService;
+	}
+
+	/**
+	 * @return the instPropertyService
+	 */
+	public InstPropertyService getPropertyService() {
+		return instPropertyService;
+	}
+
+	/**
+	 * @param instPropertyService the instPropertyService to set
+	 */
+	public void setInstPropertyService(InstPropertyService instPropertyService) {
+		this.instPropertyService = instPropertyService;
+	}
 }

@@ -31,7 +31,7 @@ import java.util.Hashtable;
 import java.util.Map;
 import java.util.Properties;
 
-import org.i3xx.step.due.service.model.PropertyService;
+import org.i3xx.step.due.service.model.InstPropertyService;
 import org.i3xx.step.zero.service.impl.mandator.MandatorServiceImpl;
 import org.i3xx.step.zero.service.model.mandator.Mandator;
 import org.i3xx.util.basic.io.FilePath;
@@ -43,9 +43,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class PropertyServiceImpl implements PropertyService {
+public class InstPropertyServiceImpl implements InstPropertyService {
 	
-	static Logger logger = LoggerFactory.getLogger(PropertyServiceImpl.class);
+	static Logger logger = LoggerFactory.getLogger(InstPropertyServiceImpl.class);
 			
 	/** The osgi bundle context */
 	private BundleContext bundleContext;
@@ -53,7 +53,7 @@ public class PropertyServiceImpl implements PropertyService {
 	/**  */
 	private Map<String, ServiceRegistration<?>> srvRegistration;
 
-	public PropertyServiceImpl() {
+	public InstPropertyServiceImpl() {
 		bundleContext = null;
 		srvRegistration = new HashMap<String, ServiceRegistration<?>>();
 	}
@@ -124,7 +124,7 @@ public class PropertyServiceImpl implements PropertyService {
 		srvDict.put(Mandator.MANDATORID, mandatorId);
 		srvDict.put(Mandator.GROUPID, groupId);
 		srvDict.put(Mandator.ARTIFACTID, artifactId);
-		srvDict.put(PropertyService.PATH_ID, path);
+		srvDict.put(InstPropertyService.PATH_ID, path);
 		String cName = org.i3xx.step.zero.service.model.mandator.PropertyService.class.getName();
 		
 		// Unregister an old service
@@ -132,7 +132,7 @@ public class PropertyServiceImpl implements PropertyService {
 			String filter = "(&("+Mandator.MANDATORID+"="+mandatorId+")("+
 					Mandator.GROUPID+"="+groupId+")("+
 					Mandator.ARTIFACTID+"="+artifactId+")("+
-					PropertyService.PATH_ID+"="+path+"))";
+					InstPropertyService.PATH_ID+"="+path+"))";
 			ServiceReference<?>[] refs = bundleContext.getServiceReferences(cName, filter);
 			if(refs!=null) {
 				for(ServiceReference<?> ref : refs) {

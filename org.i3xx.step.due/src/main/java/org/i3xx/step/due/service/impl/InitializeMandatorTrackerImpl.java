@@ -21,6 +21,7 @@ package org.i3xx.step.due.service.impl;
  */
 
 
+import org.i3xx.step.due.service.model.InstPropertyService;
 import org.i3xx.step.due.service.model.Session0Service;
 import org.i3xx.step.due.service.model.SessionService;
 import org.i3xx.step.zero.service.model.mandator.Mandator;
@@ -42,8 +43,24 @@ public class InitializeMandatorTrackerImpl extends ServiceTracker<Mandator, Mand
 
 	static Logger logger = LoggerFactory.getLogger(InitializeMandatorTrackerImpl.class);
 	
-	public InitializeMandatorTrackerImpl(BundleContext bundleContext) {
+	/** The service */
+	private SessionService sessionService;
+	
+	/** The service */
+	private Session0Service session0Service;
+	
+	/** The service */
+	private InstPropertyService instPropertyService;
+	
+	public InitializeMandatorTrackerImpl(BundleContext bundleContext,
+			SessionService sessionService, Session0Service session0Service,
+			InstPropertyService instPropertyService) {
+		
 		super(bundleContext, Mandator.class.getName(), null);
+		
+		this.sessionService = sessionService;
+		this.session0Service = session0Service;
+		this.instPropertyService = instPropertyService;
 	}
 	
 	/* (non-Javadoc)
@@ -73,33 +90,48 @@ public class InitializeMandatorTrackerImpl extends ServiceTracker<Mandator, Mand
 		//
 		// Gets the configured mandator and initialize the '0' session.
 		//
+		
+		//
+		// Search the service if it can be found (at blueprint start, the service is not in the registry)
+		//
 		ServiceReference<Session0Service> osr = context.getServiceReference(Session0Service.class);
 		if(osr==null){
-			logger.warn("The session '0' service is not available (maybe down or a version conflict).");
-			return null;
-		}
-		Session0Service os = context.getService(osr);
-		if(os==null)
-			logger.warn("The session '0' service is not available (maybe down or a version conflict).");
+			logger.debug("The session '0' service is not available (3).");
+		}else{
+			Session0Service os = context.getService(osr);
+			if(os==null){
+				logger.debug("The session '0' service is not available (4).");
+			}else{
+				session0Service = os;
+			}//fi
+		}//fi
 		
 		//
 		// Gets the session service
 		//
 		ServiceReference<SessionService> xsr = context.getServiceReference(SessionService.class);
-		SessionService sessionService = context.getService(xsr);
-		if(sessionService==null)
-			logger.warn("The session service is not available (maybe down or a version conflict).");
+		if(xsr==null){
+			logger.debug("The session service is not available (5).");
+		}else{
+			SessionService xs = context.getService(xsr);
+			if(xs==null) {
+				logger.debug("The session service is not available (maybe down or a version conflict).");
+			}else{
+				sessionService = xs;
+			}
+		}//fi
 		
 		//
 		// Create a new session if necessary.
 		//
-		os.initialize(sessionService, symbolService, mandator.getId());
+		session0Service.initialize(sessionService, symbolService, mandator.getId());
 		
 		//
 		// Scan the properties of the mandator
 		//
 		PropertyScanner scan = new PropertyScanner();
 		scan.setBundleContext(context);
+		scan.setInstPropertyService(instPropertyService);
 		scan.scan(mandator.getId());
 		
 		

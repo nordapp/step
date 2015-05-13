@@ -23,7 +23,7 @@ package org.i3xx.step.due.service.model;
 
 import java.io.IOException;
 
-public interface PropertyService {
+public interface InstPropertyService {
 	
 	/**
 	 * The path stored in the service registry as a property. The path

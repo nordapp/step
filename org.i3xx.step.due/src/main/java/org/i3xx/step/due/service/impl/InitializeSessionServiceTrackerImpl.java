@@ -42,8 +42,15 @@ public class InitializeSessionServiceTrackerImpl extends ServiceTracker<SessionS
 	
 	static Logger logger = LoggerFactory.getLogger(InitializeSessionServiceTrackerImpl.class);
 	
-	public InitializeSessionServiceTrackerImpl(BundleContext bundleContext) {
+	/** The service */
+	private Session0Service session0Service;
+	
+	public InitializeSessionServiceTrackerImpl(BundleContext bundleContext,
+			Session0Service session0Service) {
+		
 		super(bundleContext, SessionService.class.getName(), null);
+		
+		this.session0Service = session0Service;
 	}
 	
 	/* (non-Javadoc)
@@ -68,14 +75,21 @@ public class InitializeSessionServiceTrackerImpl extends ServiceTracker<SessionS
 		//
 		// Gets the configured mandator and initialize the '0' session.
 		//
+		
+		//
+		// Search the service if it can be found (at blueprint start, the service is not in the registry)
+		//
 		ServiceReference<Session0Service> osr = context.getServiceReference(Session0Service.class);
 		if(osr==null){
-			logger.warn("The session '0' service is not available.");
-			return null;
-		}
-		Session0Service os = context.getService(osr);
-		if(os==null)
-			logger.warn("The session '0' service is not available.");
+			logger.debug("The session '0' service is not available (1).");
+		}else{
+			Session0Service os = context.getService(osr);
+			if(os==null) {
+				logger.debug("The session '0' service is not available (2).");
+			}else{
+				session0Service = os;
+			}//fi
+		}//fi
 		
 		//
 		// Gets the configured mandator and initialize the '0' session.
@@ -94,7 +108,7 @@ public class InitializeSessionServiceTrackerImpl extends ServiceTracker<SessionS
 				logger.debug("The mandator {} is available at the path '{}'.", mandatorId, mandator.getPath());
 			
 			//initialize the session
-			os.initialize(sessionService, symbolService, mandatorId);
+			session0Service.initialize(sessionService, symbolService, mandatorId);
 		}//for
 		
 		return sessionService;

@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.i3xx.step.due.service.model.PropertyService;
+import org.i3xx.step.due.service.model.InstPropertyService;
 import org.i3xx.step.zero.service.impl.mandator.MandatorServiceImpl;
 import org.i3xx.step.zero.service.model.mandator.Mandator;
 import org.i3xx.step.zero.service.model.mandator.MandatorService;
@@ -43,9 +43,13 @@ public class PropertyScanner {
 			
 	/** The osgi bundle context */
 	private BundleContext bundleContext;
+	
+	/** The service */
+	private InstPropertyService instPropertyService;
 
 	public PropertyScanner() {
 		bundleContext = null;
+		instPropertyService = null;
 	}
 	
 	/**
@@ -98,10 +102,17 @@ public class PropertyScanner {
 		//
 		// get the service
 		//
-		ServiceReference<PropertyService> psr = bundleContext.getServiceReference(PropertyService.class);
-		PropertyService ps = (PropertyService)bundleContext.getService(psr);
-		if(ps==null)
-			logger.warn("The property service is not available (maybe down or a version conflict).");
+		ServiceReference<InstPropertyService> psr = bundleContext.getServiceReference(InstPropertyService.class);
+		if(psr==null) {
+			logger.warn("The property service reference is not available.");
+		}else{
+			InstPropertyService ps = (InstPropertyService)bundleContext.getService(psr);
+			if(ps==null){
+				logger.warn("The property service is not available (maybe down or a version conflict).");
+			}else{
+				instPropertyService = ps;
+			}//fi
+		}//fi
 		
 		//
 		// scan directories
@@ -130,7 +141,7 @@ public class PropertyScanner {
 							
 							for(String pathId : list) {
 								try {
-									ps.setProperties(mandatorId, groupId, artifactId, pathId);
+									instPropertyService.setProperties(mandatorId, groupId, artifactId, pathId);
 								} catch (IOException e) {
 									logger.warn("", e);
 								}
@@ -177,6 +188,20 @@ public class PropertyScanner {
 	 */
 	public void setBundleContext(BundleContext bundleContext) {
 		this.bundleContext = bundleContext;
+	}
+
+	/**
+	 * @return the instPropertyService
+	 */
+	public InstPropertyService getInstPropertyService() {
+		return instPropertyService;
+	}
+
+	/**
+	 * @param instPropertyService the instPropertyService to set
+	 */
+	public void setInstPropertyService(InstPropertyService instPropertyService) {
+		this.instPropertyService = instPropertyService;
 	}
 
 }

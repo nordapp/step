@@ -48,8 +48,8 @@
      !
      !   The property service provides the reading of a property without any processing.
      !-->
-    <service ref="duePropertyService" interface="org.i3xx.step.due.service.model.PropertyService" />
-    <bean id="duePropertyService" class="org.i3xx.step.due.service.impl.PropertyServiceImpl" init-method="startUp" activation="eager">
+    <service ref="instPropertyService" interface="org.i3xx.step.due.service.model.InstPropertyService" />
+    <bean id="instPropertyService" class="org.i3xx.step.due.service.impl.InstPropertyServiceImpl" init-method="startUp" activation="eager">
     	<property name="bundleContext" ref="blueprintBundleContext"/>
     </bean>
     
@@ -114,10 +114,9 @@
     <bean class="org.i3xx.step.due.service.impl.ActivatorBean" init-method="startUp" destroy-method="cleanUp" activation="eager">
     	<property name="bundleContext" ref="blueprintBundleContext"/>
     	
-    	<property name="serviceDummy1" ref="zeroMandatorService"/>
-    	<property name="serviceDummy2" ref="symbolService"/>
-    	<property name="serviceDummy3" ref="dueSession0Service"/>
-    	<property name="serviceDummy4" ref="dueSessionService"/>
+    	<property name="session0Service" ref="dueSession0Service"/>
+    	<property name="sessionService" ref="dueSessionService"/>
+    	<property name="instPropertyService" ref="instPropertyService"/>
     </bean>
     
     
