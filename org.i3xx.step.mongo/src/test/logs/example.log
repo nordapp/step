@@ -154,3 +154,9 @@
 0    [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
 766  [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
 797  [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
+0    [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
+859  [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
+890  [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
+0    [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
+1016 [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
+1031 [main] INFO  org.i3xx.step.mongo.core.impl.MongoDb001Test  - Test org.i3xx.data.engine.TJdomParser -start-
