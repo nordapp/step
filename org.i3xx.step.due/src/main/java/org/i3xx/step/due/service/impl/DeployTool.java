@@ -434,37 +434,41 @@ public class DeployTool {
 	private void fileUnzip(File zipFile, FilePath tmpPath) throws ZipException, IOException {
 		
 		ZipFile zip = new ZipFile(zipFile);
-		Enumeration<? extends ZipEntry> entries = zip.entries();
-		while(entries.hasMoreElements()) {
-			
-			ZipEntry entry = entries.nextElement();
-			File dest = tmpPath.add( entry.getName() ).toFile();
-			
-			//ensure the directory structure
-			File path = dest.getParentFile();
-			if( path!=null && (! path.exists()) ) {
-				path.mkdirs();
-			}
-			
-			OutputStream os = new FileOutputStream(dest);
-			InputStream is = zip.getInputStream(entry);
-			
-			int len = 0;
-			byte[] buf = new byte[1024];
-			
-			try{
-				while((len=is.read(buf))>-1){
-					os.write(buf, 0, len);
-			}
-			}finally{
-				try{
-					is.close();
-				}finally{
-					os.close();
+		try{
+			Enumeration<? extends ZipEntry> entries = zip.entries();
+			while(entries.hasMoreElements()) {
+				
+				ZipEntry entry = entries.nextElement();
+				File dest = tmpPath.add( entry.getName() ).toFile();
+				
+				//ensure the directory structure
+				File path = dest.getParentFile();
+				if( path!=null && (! path.exists()) ) {
+					path.mkdirs();
 				}
-			}
-			
-		}//while
+				
+				OutputStream os = new FileOutputStream(dest);
+				InputStream is = zip.getInputStream(entry);
+				
+				int len = 0;
+				byte[] buf = new byte[1024];
+				
+				try{
+					while((len=is.read(buf))>-1){
+						os.write(buf, 0, len);
+				}
+				}finally{
+					try{
+						is.close();
+					}finally{
+						os.close();
+					}
+				}
+				
+			}//while
+		}finally{
+			zip.close();
+		}
 	}
 	
 	/**
