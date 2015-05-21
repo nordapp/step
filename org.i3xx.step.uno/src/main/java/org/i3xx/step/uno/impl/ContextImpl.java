@@ -270,23 +270,28 @@ public class ContextImpl implements StepContext {
 
 	public void setValue(String key, Object value) {
 		
-		Object oldValue = values.get(key);
-		
-		//Add the key to the index
-		if(keyIndex!=null)
-			keyIndex.addKey(key);
-		
-		//Only Numbers, Strings and serializable Objects are allowed.
-		if(verifyValue==null) {
-			values.put(key, value);
+		if(localValues.containsKey(key)) {
+			localValues.put(key, value);
+		}else{
 			
-			if(notifyValue!=null)
-				notifyValue.notify(key, oldValue, value);
-		}else if(verifyValue.verify(value)){
-			values.put(key, value);
+			Object oldValue = values.get(key);
 			
-			if(notifyValue!=null)
-				notifyValue.notify(key, oldValue, value);
+			//Add the key to the index
+			if(keyIndex!=null)
+				keyIndex.addKey(key);
+			
+			//Only Numbers, Strings and serializable Objects are allowed.
+			if(verifyValue==null) {
+				values.put(key, value);
+				
+				if(notifyValue!=null)
+					notifyValue.notify(key, oldValue, value);
+			}else if(verifyValue.verify(value)){
+				values.put(key, value);
+				
+				if(notifyValue!=null)
+					notifyValue.notify(key, oldValue, value);
+			}//fi
 		}//fi
 	}
 	
