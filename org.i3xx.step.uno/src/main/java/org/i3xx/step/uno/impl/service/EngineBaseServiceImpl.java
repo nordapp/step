@@ -273,6 +273,31 @@ public class EngineBaseServiceImpl implements EngineBaseService {
 	}
 	
 	/* (non-Javadoc)
+	 * @see org.i3xx.step.uno.model.service.EngineBaseService#queryEngine(java.math.BigInteger, java.util.Map)
+	 */
+	public Engine queryEngine(BigInteger id, Map<String, Object> params) throws Exception {
+		
+		Engine engine = null;
+		
+		if( params.containsKey(IS_AVAILABLE) ){
+			if( ((Boolean)params.get(IS_AVAILABLE)).booleanValue() ){
+				engine = engines.get(id);
+			}else{
+				engine = getEngine(id);
+			}
+		}
+		
+		if( engine!=null && params.containsKey(IS_LOGIN) ){
+			if( ((Boolean)params.get(IS_LOGIN)).booleanValue() ){
+				if( ! engine.isLogin() )
+					engine = null;
+			}
+		}
+		
+		return engine;
+	}
+	
+	/* (non-Javadoc)
 	 * @see org.i3xx.step.uno.model.service.EngineBaseService#dropEngine(java.math.BigInteger)
 	 */
 	public void dropEngine(BigInteger id) throws Exception {

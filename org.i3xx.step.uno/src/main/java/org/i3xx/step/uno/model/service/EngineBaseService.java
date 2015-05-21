@@ -24,13 +24,27 @@ package org.i3xx.step.uno.model.service;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Map;
 
 import org.i3xx.step.uno.model.daemon.Engine;
 import org.osgi.framework.BundleContext;
 
 public interface EngineBaseService {
 	
+	/**
+	 * 
+	 */
 	public static final String ENGINE_BASE_ID = "engineBaseId";
+	
+	/**
+	 * Flag to query an available engine
+	 */
+	public static final String IS_AVAILABLE = "isAvailable";
+	
+	/**
+	 * Flag to query an engine with a valid login
+	 */
+	public static final String IS_LOGIN = "isLogin";
 	
 	/**
 	 * Load all bundles to the store
@@ -96,6 +110,24 @@ public interface EngineBaseService {
 	 * @throws Exception
 	 */
 	Engine getEngine(BigInteger id) throws Exception;
+	
+	/**
+	 * <p>Creates a new engine or returns the existing engine with the specified id
+	 * and if the parameter doesn't match null.</p>
+	 * 
+	 * <p>If the IS_AVAILABLE parameter is set to true, only an engine is returned
+	 * if one is available. If the flag is set to false and there is no engine a
+	 * new engine will be created.</p>
+	 * 
+	 * <p>If the IS_LOGIN parameter is set to true, only an engine with a valid
+	 * login can be returned.</p>
+	 * 
+	 * @param id The id of the engine
+	 * @param params The parameter to query the engine
+	 * @return The engine or null if no engine can be found or created.
+	 * @throws Exception
+	 */
+	Engine queryEngine(BigInteger id, Map<String, Object> params) throws Exception;	
 	
 	/**
 	 * Restarts the engine base (after a kill)
