@@ -95,6 +95,16 @@ public class Require extends ScriptableObject{
 		Map<String, Object> map = new HashMap<String, Object>();
 		fromJSON(properties, map);
 		
+		//
+		// get builtin service
+		//
+		if(name.startsWith("org.i3xx.step.uno.")) {
+			//get the built in service
+			Object srv = context.getService(name);
+			if(srv != null)
+				return srv;
+		}
+		
 		return context.getServiceBridge().getService(name, map);
 	}
 	

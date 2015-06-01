@@ -160,7 +160,7 @@ public class ContextImpl implements StepContext {
 	 */
 	public Object getService(String fullname) throws Exception {
 		//builtin services
-		if(fullname.startsWith("org.i3xx.step.uno")) {
+		if(fullname.startsWith("org.i3xx.step.uno.")) {
 			if(fullname.equals("org.i3xx.step.uno.ContextService")){
 				//
 				// - Caution: security hazard, wrap the context object properly - do not extend -
