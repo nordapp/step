@@ -2,22 +2,21 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.i3xx.step</groupId>
   <artifactId>org.i3xx.step.store</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <name>NordApp OfficeBase :: store</name>
+  <packaging>bundle</packaging>
+  <description>File integration to step</description>
   
   <parent>
-    <groupId>org.i3xx.project</groupId>
-    <artifactId>parent-project</artifactId>
-    <version>0.0.6-SNAPSHOT</version>
+    <groupId>org.i3xx.parent</groupId>
+    <artifactId>parent-step-project</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
   </parent>
   
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.inceptionYear>2014</project.inceptionYear>
-	<org.i3xx.util.basic.version>0.0.1-SNAPSHOT</org.i3xx.util.basic.version>
-	<org.i3xx.util.store.version>1.0.4-SNAPSHOT</org.i3xx.util.store.version>
-	<org.i3xx.step.zero.version>0.0.2-SNAPSHOT</org.i3xx.step.zero.version>
   </properties>
   
   <build>
@@ -44,10 +43,10 @@
 						javax.security.auth.x500,
 						org.apache.commons.codec.binary,
 						org.bson.types,
-						org.i3xx.util.basic.io;version="${org.i3xx.util.basic.version}",
-						org.i3xx.util.store;version="${org.i3xx.util.store.version}",
-						org.i3xx.step.zero.service.impl.mandator;version="${org.i3xx.step.zero.version}",
-						org.i3xx.step.zero.service.model.mandator;version="${org.i3xx.step.zero.version}",
+						org.i3xx.util.basic.io;version="${util.basic.version}",
+						org.i3xx.util.store;version="${util.store.version}",
+						org.i3xx.step.zero.service.impl.mandator;version="${step.zero.version}",
+						org.i3xx.step.zero.service.model.mandator;version="${step.zero.version}",
 						org.osgi.framework,
 						org.osgi.util.tracker,
 						org.slf4j,
@@ -58,16 +57,6 @@
 					<!--<Export-Service></Export-Service>-->
 				</instructions>
 			</configuration>
-		</plugin>
-		
-		<!-- The test needs this configuration -->
-		<plugin>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<configuration>
-				<systemPropertyVariables>
-					<workspace.home>${basedir}</workspace.home>
-				</systemPropertyVariables>
-			</configuration>		
 		</plugin>
 		
 	</plugins>
@@ -93,30 +82,22 @@
   	<dependency>
   		<groupId>org.osgi</groupId>
   		<artifactId>core</artifactId>
-  		<version>4.3.0</version>
   	</dependency>
 	<dependency>
 		<groupId>org.i3xx.util</groupId>
 		<artifactId>org.i3xx.util.store</artifactId>
-		<version>${org.i3xx.util.store.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>org.i3xx.step</groupId>
 		<artifactId>org.i3xx.step.zero</artifactId>
-		<type>bundle</type>
-		<version>${org.i3xx.step.zero.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>com.google.code.gson</groupId>
 		<artifactId>gson</artifactId>
-		<version>2.3.1</version>
 	</dependency>
 	<dependency>
 		<groupId>commons-codec</groupId>
 		<artifactId>commons-codec</artifactId>
-		<version>1.10</version>
 	</dependency>
   </dependencies>
-  <packaging>bundle</packaging>
-  <description>File integration to step</description>
 </project>
