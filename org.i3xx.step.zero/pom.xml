@@ -2,61 +2,115 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.i3xx.step</groupId>
   <artifactId>org.i3xx.step.zero</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <url>http://maven.apache.org</url>
+  <name>NordApp OfficeBase :: zero</name>
   <description>Workflow step sequencer initializing</description>
   
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.inceptionYear>2014</project.inceptionYear>
-	<org.i3xx.util.basic.version>0.0.1-SNAPSHOT</org.i3xx.util.basic.version>
-	<org.i3xx.util.general.setup.version>0.0.1-SNAPSHOT</org.i3xx.util.general.setup.version>
-	<org.i3xx.util.platform.version>0.0.1-SNAPSHOT</org.i3xx.util.platform.version>
   </properties>
   
   <parent>
-    <groupId>org.i3xx.project</groupId>
-    <artifactId>parent-project</artifactId>
-    <version>0.0.6-SNAPSHOT</version>
+    <groupId>org.i3xx.parent</groupId>
+    <artifactId>parent-step-project</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
   </parent>
   
   <dependencies>
 	<dependency>
 		<groupId>org.i3xx.util</groupId>
 		<artifactId>org.i3xx.util.platform</artifactId>
-		<version>${org.i3xx.util.platform.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>org.i3xx.util</groupId>
 		<artifactId>org.i3xx.util.general.setup</artifactId>
-		<version>${org.i3xx.util.general.setup.version}</version>
 	</dependency>
+	
 	<dependency>
 		<groupId>commons-beanutils</groupId>
 		<artifactId>commons-beanutils-core</artifactId>
-		<version>1.8.3</version>
 	</dependency>
+	
+	<dependency>
+		<groupId>jline</groupId>
+		<artifactId>jline</artifactId>
+		<version>2.12</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.mina</groupId>
+	    <artifactId>mina-core</artifactId>
+	</dependency>
+		
 	<dependency>
 		<groupId>org.apache.felix</groupId>
 		<artifactId>org.apache.felix.configadmin</artifactId>
-		<version>1.8.0</version>
 	</dependency>
 	<dependency>
-		<groupId>org.apache.karaf.shell</groupId>
-		<artifactId>org.apache.karaf.shell.console</artifactId>
-		<version>3.0.2</version>
+	    <groupId>org.apache.felix</groupId>
+	    <artifactId>org.apache.felix.fileinstall</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.jaas</groupId>
+	    <artifactId>org.apache.karaf.jaas.config</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.jaas</groupId>
+	    <artifactId>org.apache.karaf.jaas.modules</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.shell</groupId>
+	    <artifactId>org.apache.karaf.shell.console</artifactId>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-core</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.sshd</groupId>
+	    <artifactId>sshd-core</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>org.osgi.core</artifactId>
 	</dependency>
 	<dependency>
 		<groupId>org.osgi</groupId>
-		<artifactId>core</artifactId>
-		<version>4.3.0</version>
+		<artifactId>org.osgi.core</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
 	</dependency>
 	<dependency>
-		<groupId>org.apache.shiro</groupId>
-		<artifactId>shiro-core</artifactId>
-		<version>1.2.3</version>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
 	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+	</dependency>
+	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.i3xx.eclipse.test</groupId>
+      <artifactId>workspace</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   
   <build>
@@ -129,6 +183,5 @@
   	</resources>
   </build>
   
-  <name>NordApp OfficeBase :: zero</name>
 </project>
   
