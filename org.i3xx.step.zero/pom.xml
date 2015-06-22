@@ -145,6 +145,7 @@
 						org.i3xx.util.basic.platform;version="${util.basic.version}",
 						org.i3xx.util.general.setup.impl;version="${util.general.setup.version}",
 						org.i3xx.util.general.setup.model;version="${util.general.setup.version}",
+						org.i3xx.util.platform.impl;version="${util.platform.version}",
 						org.apache.commons.codec.binary,
 						org.apache.karaf.shell.commands,
 						org.apache.karaf.shell.console,
