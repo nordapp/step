@@ -37,13 +37,12 @@
 	<dependency>
 		<groupId>jline</groupId>
 		<artifactId>jline</artifactId>
-		<version>2.12</version>
 	</dependency>
 	<dependency>
 	    <groupId>org.apache.mina</groupId>
 	    <artifactId>mina-core</artifactId>
 	</dependency>
-		
+	
 	<dependency>
 		<groupId>org.apache.felix</groupId>
 		<artifactId>org.apache.felix.configadmin</artifactId>
