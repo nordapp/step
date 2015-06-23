@@ -115,7 +115,7 @@ public class MongoDb001Test {
 		MongoClient mongo = new MongoClient("localhost", 27017);
 		DbDatabase db = new DatabaseImpl(mongo, "dbVDV");
 		DbCollection col = db.getCollection("anschrift");
-		col.createIndex("{ \"Nr\" : \"1\"}", "{}");
+		col.createIndex("{ \"Nr\" : 1}", "{}");
 		
 	}
 	
