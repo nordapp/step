@@ -115,7 +115,7 @@ public class MongoDb001Test {
 		MongoClient mongo = new MongoClient("localhost", 27017);
 		DbDatabase db = new DatabaseImpl(mongo, "dbVDV");
 		DbCollection col = db.getCollection("anschrift");
-		col.createIndex("{ \"Nr\" : \"asc\"}", "{}");
+		col.createIndex("{ \"Nr\" : \"1\"}", "{}");
 		
 	}
 	
@@ -130,7 +130,7 @@ public class MongoDb001Test {
 		
 		while( c.hasNext() ) {
 			DbObject o = c.next();
-			System.out.println( o.toString() );
+			//System.out.println( o.toString() );
 		}
 		
 		//fail("Not yet implemented"); // TODO
