@@ -44,7 +44,7 @@ public class MongoDb002Test {
 	public void setUp() throws Exception {
 	}
 
-	@Test
+	@Ignore
 	public void testA() throws UnknownHostException {
 		
 		MongoClient mongo = new MongoClient("localhost", 27017);
