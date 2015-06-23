@@ -6,20 +6,17 @@
   <packaging>bundle</packaging>
   <url>http://maven.apache.org</url>
   <name>NordApp OfficeBase :: due</name>
+  <description>Resource service</description>
   
   <parent>
-    <groupId>org.i3xx.project</groupId>
-    <artifactId>parent-project</artifactId>
-    <version>0.0.6-SNAPSHOT</version>
+    <groupId>org.i3xx.parent</groupId>
+    <artifactId>parent-step-project</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
   </parent>
   
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.inceptionYear>2014</project.inceptionYear>
-	<org.i3xx.util.basic.version>0.0.1-SNAPSHOT</org.i3xx.util.basic.version>
-	<org.i3xx.util.store.version>1.0.4-SNAPSHOT</org.i3xx.util.store.version>
-	<org.i3xx.step.zero.version>0.0.2-SNAPSHOT</org.i3xx.step.zero.version>
-	<org.i3xx.util.symbol.version>0.0.1-SNAPSHOT</org.i3xx.util.symbol.version>
   </properties>
   
   <build>
@@ -72,10 +69,10 @@
 						org.apache.velocity.texen.util,
 						org.apache.velocity.util,
 						org.apache.velocity.util.introspection,
-						org.i3xx.step.zero.service.impl.mandator;version="${org.i3xx.step.zero.version}",
-						org.i3xx.step.zero.service.model.mandator;version="${org.i3xx.step.zero.version}",
-						org.i3xx.util.symbol.service.model;version="${org.i3xx.util.symbol.version}",
-						org.i3xx.util.basic.io;version="${org.i3xx.util.basic.version}",
+						org.i3xx.step.zero.service.impl.mandator;version="${step.zero.version}",
+						org.i3xx.step.zero.service.model.mandator;version="${step.zero.version}",
+						org.i3xx.util.symbol.service.model;version="${util.symbol.version}",
+						org.i3xx.util.basic.io;version="${util.basic.version}",
 						org.osgi.service.blueprint,
 						org.osgi.service.cm,
 						org.osgi.util.tracker,
@@ -87,15 +84,6 @@
 					<!--<Export-Service></Export-Service>-->
 				</instructions>
 			</configuration>
-		</plugin>
-		
-		<plugin>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<configuration>
-				<systemPropertyVariables>
-					<workspace.home>${basedir}</workspace.home>
-				</systemPropertyVariables>
-			</configuration>		
 		</plugin>
 		
 	</plugins>
@@ -115,54 +103,118 @@
   	<dependency>
   		<groupId>org.osgi</groupId>
   		<artifactId>org.osgi.core</artifactId>
-  		<version>4.3.1</version>
   	</dependency>
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>org.osgi.compendium</artifactId>
+	</dependency>
+	
 	<dependency>
 		<groupId>org.i3xx.util</groupId>
 		<artifactId>org.i3xx.util.store</artifactId>
-		<version>${org.i3xx.util.store.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>org.i3xx.util</groupId>
 		<artifactId>org.i3xx.util.symbol</artifactId>
-		<version>${org.i3xx.util.symbol.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>org.i3xx.step</groupId>
 		<artifactId>org.i3xx.step.zero</artifactId>
-		<type>bundle</type>
-		<version>${org.i3xx.step.zero.version}</version>
+	</dependency>
+	
+		
+	<dependency>
+		<groupId>org.apache.felix</groupId>
+		<artifactId>org.apache.felix.configadmin</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.felix</groupId>
+	    <artifactId>org.apache.felix.fileinstall</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.jaas</groupId>
+	    <artifactId>org.apache.karaf.jaas.config</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.jaas</groupId>
+	    <artifactId>org.apache.karaf.jaas.modules</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.shell</groupId>
+	    <artifactId>org.apache.karaf.shell.console</artifactId>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.apache.mina</groupId>
+	    <artifactId>mina-core</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-core</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.sshd</groupId>
+	    <artifactId>sshd-core</artifactId>
 	</dependency>
 	<dependency>
 		<groupId>org.apache.velocity</groupId>
 		<artifactId>velocity</artifactId>
-		<version>1.7</version>
 	</dependency>
+	
 	<dependency>
 		<groupId>commons-codec</groupId>
 		<artifactId>commons-codec</artifactId>
-		<version>1.10</version>
 	</dependency>
 	<dependency>
 		<groupId>commons-lang</groupId>
 		<artifactId>commons-lang</artifactId>
-		<version>2.6</version>
 	</dependency>
 	<dependency>
 		<groupId>com.google.code.gson</groupId>
 		<artifactId>gson</artifactId>
-		<version>2.3.1</version>
 	</dependency>
 	<dependency>
 		<groupId>commons-beanutils</groupId>
 		<artifactId>commons-beanutils-core</artifactId>
-		<version>1.8.3</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>jline</groupId>
+		<artifactId>jline</artifactId>
 	</dependency>
 	<dependency>
-		<groupId>org.osgi</groupId>
-		<artifactId>org.osgi.compendium</artifactId>
-		<version>4.2.0</version>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
 	</dependency>
+	
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+	</dependency>
+	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.i3xx.eclipse.test</groupId>
+      <artifactId>workspace</artifactId>
+      <scope>test</scope>
+    </dependency>
+	
   </dependencies>
-  <description>Resource service</description>
 </project>
