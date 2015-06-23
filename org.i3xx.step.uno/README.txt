@@ -1,3 +1,17 @@
+RUNNING THE TEST (Maven 3)
+==========================
+
+Some tests need the variable 'workspace.home' set to run properly.
+
+You may give the variable to maven appending it to the maven goal using the
+-D parameter.
+
+Example using Git in a Hudson/Jenkins job: clean install -Dworkspace.home=$WORKSPACE/org.i3xx.step.uno
+
+
+RUNNING THE PROGRAM
+===================
+
 The locations with 'data/step/bin/bundle' are set (server-side-script):
 
 - DeployServiceImpl
