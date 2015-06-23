@@ -5,18 +5,18 @@
   <version>0.0.1-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <name>NordApp OfficeBase :: mongo</name>
+  <packaging>bundle</packaging>
+  <description>MongoDB integration to step</description>
   
   <parent>
-    <groupId>org.i3xx.project</groupId>
-    <artifactId>parent-project</artifactId>
-    <version>0.0.6-SNAPSHOT</version>
+    <groupId>org.i3xx.parent</groupId>
+    <artifactId>parent-step-project</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
   </parent>
   
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.inceptionYear>2014</project.inceptionYear>
-	<org.i3xx.util.basic.version>0.0.1-SNAPSHOT</org.i3xx.util.basic.version>
-	<org.i3xx.step.zero.version>0.0.2-SNAPSHOT</org.i3xx.step.zero.version>
   </properties>
   
   <build>
@@ -49,8 +49,8 @@
 						javax.security.auth.x500,
 						org.apache.commons.codec.binary,
 						org.bson.types,
-						org.i3xx.step.zero.service.impl.mandator;version="${org.i3xx.step.zero.version}",
-						org.i3xx.step.zero.service.model.mandator;version="${org.i3xx.step.zero.version}",
+						org.i3xx.step.zero.service.impl.mandator;version="${step.zero.version}",
+						org.i3xx.step.zero.service.model.mandator;version="${step.zero.version}",
 						org.osgi.framework,
 						org.osgi.util.tracker,
 						org.slf4j,
@@ -61,16 +61,6 @@
 					<!--<Export-Service></Export-Service>-->
 				</instructions>
 			</configuration>
-		</plugin>
-		
-		<!-- The test needs this configuration -->
-		<plugin>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<configuration>
-				<systemPropertyVariables>
-					<workspace.home>${basedir}</workspace.home>
-				</systemPropertyVariables>
-			</configuration>		
 		</plugin>
 		
 	</plugins>
@@ -96,30 +86,58 @@
   	<dependency>
   		<groupId>org.osgi</groupId>
   		<artifactId>org.osgi.core</artifactId>
-  		<version>4.3.1</version>
   	</dependency>
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>org.osgi.compendium</artifactId>
+	</dependency>
+  	
 	<dependency>
 		<groupId>org.i3xx.step</groupId>
 		<artifactId>org.i3xx.step.zero</artifactId>
-		<type>bundle</type>
-		<version>0.0.2-SNAPSHOT</version>
 	</dependency>
-	<dependency>
-		<groupId>com.google.code.gson</groupId>
-		<artifactId>gson</artifactId>
-		<version>2.3.1</version>
-	</dependency>
+	
 	<dependency>
 		<groupId>commons-codec</groupId>
 		<artifactId>commons-codec</artifactId>
-		<version>1.10</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
 	</dependency>
 	<dependency>
 		<groupId>org.mongodb</groupId>
 		<artifactId>mongo-java-driver</artifactId>
-		<version>2.13.0</version>
 	</dependency>
+	
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+	</dependency>
+	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.i3xx.eclipse.test</groupId>
+      <artifactId>workspace</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
-  <packaging>bundle</packaging>
-  <description>MongoDB integration to step</description>
 </project>
