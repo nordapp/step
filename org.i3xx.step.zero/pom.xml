@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.i3xx.step</groupId>
   <artifactId>org.i3xx.step.zero</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
   <packaging>bundle</packaging>
   <url>http://maven.apache.org</url>
   <name>NordApp OfficeBase :: zero</name>
@@ -15,7 +15,7 @@
   
   <scm>
   	<developerConnection>scm:git:https://github.com/nordapp/step</developerConnection>
-  	<tag>org.i3xx.step.zero-0.0.0</tag>
+  	<tag>org.i3xx.step.zero-0.1.0</tag>
   </scm>
   
   <parent>
@@ -171,7 +171,7 @@
 						org.osgi.util.tracker,
 						org.slf4j
 					</Import-Package>
-					<Private-Package></Private-Package>
+					<Private-Package />
 					<!--<Export-Service></Export-Service>-->
 				</instructions>
 			</configuration>
@@ -180,7 +180,7 @@
 	
 	<resources>
   		<resource>
-  			<directory></directory>
+  			<directory />
   			<includes>
   				<include>OSGI-INF/**/*.*</include>
   			</includes>
