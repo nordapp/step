@@ -11,13 +11,18 @@
   <parent>
     <groupId>org.i3xx.parent</groupId>
     <artifactId>parent-step-project</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
   </parent>
   
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.inceptionYear>2014</project.inceptionYear>
   </properties>
+  
+  <scm>
+  	<developerConnection>scm:git:https://github.com/nordapp/step</developerConnection>
+  	<tag>org.i3xx.step.mongo-0.0.0</tag>
+  </scm>
   
   <build>
 	<plugins>
