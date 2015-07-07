@@ -34,7 +34,7 @@ public final class NaSecurityUtil {
 	/**
 	 * Sets the session manager
 	 * 
-	 * @param properties (currently null)
+	 * @param props (currently null)
 	 */
 	public static void setSecurityManager(Properties props) {
 		if(props==null) {
@@ -43,14 +43,24 @@ public final class NaSecurityUtil {
 		naFactory.setSecurityManager(props);
 	}
 	
+	/**
+	 * @param sessionId The session id
+	 * @return The subject
+	 */
 	public static NaSubject createSubject(String sessionId) {
 		return naFactory.createSubject(sessionId);
 	}
 	
+	/**
+	 * @return The subject
+	 */
 	public static NaSubject getSubject() {
 		return naFactory.getSubject();
 	}
 	
+	/**
+	 * @return The session
+	 */
 	public static NaSession getSession() {
 		return naFactory.getSession();
 	}

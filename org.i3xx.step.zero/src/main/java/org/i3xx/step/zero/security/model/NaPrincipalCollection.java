@@ -28,50 +28,52 @@ import java.util.Set;
 public interface NaPrincipalCollection {
 
     /**
-     * @return
+     * @return the primary principal used to uniquely identify the owning account/Subject
      */
     Object getPrimaryPrincipal();
 
     /**
      * @param type
-     * @return
+     * @return a principal of the specified type or null if there isn't one of the specified type.
      */
     <T> T oneByType(Class<T> type);
 
     /**
      * @param type
-     * @return
+     * @return a Collection of principals that are assignable from the specified type,
+     * or an empty Collection if no principals of this type are associated.
      */
     <T> Collection<T> byType(Class<T> type);
 
     /**
-     * @return
+     * @return a single Subject's principals retrieved from all configured Realms as a List.
      */
     List<?> asList();
 
     /**
-     * @return
+     * @return a single Subject's principals retrieved from all configured Realms as a Set.
      */
     Set<?> asSet();
 
     /**
-     * @param realmName
-     * @return
+     * @param realmName the name of the Realm from which the principals were retrieved.
+     * @return the Subject's principals from the specified Realm only as a Collection
+     * or an empty Collection if there are not any principals from that realm.
      */
     Collection<?> fromRealm(String realmName);
 
     /**
-     * @return
+     * @return the names of realms that this collection has one or more principals for.
      */
     Set<String> getRealmNames();
 
     /**
-     * @return
+     * @return true if this collection is empty, false otherwise.
      */
     boolean isEmpty();
     
     /**
-     * @return
+     * @return The principal collection
      */
     Object getPrincipals();
 }

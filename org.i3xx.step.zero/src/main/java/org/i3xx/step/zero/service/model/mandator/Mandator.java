@@ -84,7 +84,7 @@ public interface Mandator {
 	/**
 	 * Gets a key array of all property names
 	 * 
-	 * @return
+	 * @return The property keys as an array
 	 */
 	String[] getPropertyKeys();
 	
@@ -92,7 +92,7 @@ public interface Mandator {
 	 * Gets a property
 	 * 
 	 * @param key The key of the property
-	 * @return
+	 * @return The property value
 	 */
 	String getProperty(String key);
 	

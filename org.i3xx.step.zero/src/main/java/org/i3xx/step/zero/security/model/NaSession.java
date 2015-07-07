@@ -30,19 +30,21 @@ public interface NaSession {
 	/**
 	 * Returns a session id
 	 * 
-	 * @return
+	 * @return The unique identifier assigned to the session upon creation.
 	 */
 	Serializable getId();
 	
 	/**
 	 * The attribute of the session
 	 * @param key The key of the attribute
-	 * @return
+	 * @return the object bound under the specified key name
+	 * or null if there is no object bound under that name.
 	 */
 	Object getAttribute(Object key);
 	
 	/**
-	 * @return The list of keys
+	 * @return the keys of all attributes stored under this session,
+	 * or an empty collection if there are no session attributes.
 	 */
 	Collection<Object> getAttributeKeys();
 	
@@ -70,7 +72,7 @@ public interface NaSession {
 	 * Removes the attribute
 	 * 
 	 * @param key The key
-	 * @return
+	 * @return The attribute to be removed.
 	 */
 	Object removeAttribute(Object key);
 	

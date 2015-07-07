@@ -52,7 +52,6 @@ public interface ContextProvider {
 	/**
 	 * Get all matching context objects. If there is no result the array is empty.
 	 * 
-	 * @param bundleContext
 	 * @param properties
 	 * @return A not null array of the context objects.
 	 */

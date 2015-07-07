@@ -161,7 +161,7 @@ public class MandatorImpl implements Mandator, ManagedService {
 	/**
 	 * Gets a key array of all property names
 	 * 
-	 * @return
+	 * @return The keys as an array
 	 */
 	public String[] getPropertyKeys() {
 		return properties.keySet().toArray(new String[properties.size()]);
@@ -171,7 +171,7 @@ public class MandatorImpl implements Mandator, ManagedService {
 	 * Gets a property
 	 * 
 	 * @param key The key of the property
-	 * @return
+	 * @return The property value
 	 */
 	public String getProperty(String key){
 		return properties.get(key);

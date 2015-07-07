@@ -38,7 +38,7 @@ public interface NaFactory {
 	 * Creates a subject from a sessionId
 	 * 
 	 * @param sessionId
-	 * @return
+	 * @return The subject
 	 */
 	NaSubject createSubject(Serializable sessionId);
 	

@@ -205,8 +205,8 @@ public class ContextProviderImpl implements ContextProvider {
 	}
 	
 	/**
-	 * @param properties
-	 * @return
+	 * @param properties The properties to build the filter
+	 * @return The filter as a String
 	 */
 	private static String getFilter(Map<String, Object> properties) {
 		StringBuffer filter = new StringBuffer();
@@ -230,9 +230,9 @@ public class ContextProviderImpl implements ContextProvider {
 	/**
 	 * Gets the first matching context or null if nothing matches.
 	 * 
-	 * @param bundleContext
-	 * @param properties
-	 * @return
+	 * @param bundleContext The bundle context
+	 * @param properties The properties to find the service
+	 * @return The context
 	 */
 	public static Context find(BundleContext bundleContext, Map<String, Object> properties) {
 		String clazz = Context.class.getName();

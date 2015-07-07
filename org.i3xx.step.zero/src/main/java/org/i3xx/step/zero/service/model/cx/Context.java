@@ -47,14 +47,14 @@ public interface Context {
 	/**
 	 * Increase the bind counter and return the current value.
 	 * 
-	 * @return
+	 * @return The value as an integer
 	 */
 	int bind();
 	
 	/**
 	 * Decrease the bind counter and return the current value.
 	 * 
-	 * @return
+	 * @return The value as an integer
 	 */
 	int unbind();
 	

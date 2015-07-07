@@ -26,7 +26,7 @@ public interface PropertyService {
 	/**
 	 * Get the names of all properties available at this service.
 	 * 
-	 * @return
+	 * @return The property names as an array
 	 */
 	String[] getPropertyNames();
 	
@@ -35,7 +35,7 @@ public interface PropertyService {
 	 * true is returned.
 	 * 
 	 * @param name The name of the property.
-	 * @return
+	 * @return True if a property exists, false otherwise.
 	 */
 	boolean hasProperty(String name);
 	
@@ -43,7 +43,7 @@ public interface PropertyService {
 	 * Gets the value of a property.
 	 * 
 	 * @param name The name of the property.
-	 * @return
+	 * @return The property value.
 	 */
 	String getProperty(String name);
 }

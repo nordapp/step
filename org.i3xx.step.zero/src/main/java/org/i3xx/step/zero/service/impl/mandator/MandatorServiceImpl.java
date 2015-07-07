@@ -283,7 +283,7 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 	/**
 	 * Get a list of all available mandator.
 	 * 
-	 * @return
+	 * @return The mandator list as a String array
 	 */
 	public String[] getMandatorList() {
 		Set<String> list = new HashSet<String>();
@@ -310,7 +310,7 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 	 * Gets the mandator with the id
 	 * 
 	 * @param id The id of the mandator
-	 * @return
+	 * @return The mandator object
 	 */
 	public Mandator getMandator(String id) {
 		Mandator mandator = null;
@@ -332,8 +332,8 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 	/**
 	 * Gets the mandator with the pid
 	 * 
-	 * @param id The pid of the mandator
-	 * @return
+	 * @param pid The pid of the mandator
+	 * @return The mandator object
 	 */
 	protected Mandator getMandatorByPid(String pid) {
 		Mandator mandator = null;
@@ -357,7 +357,7 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 	 * 
 	 * @param context The bundle context
 	 * @param id The id of the mandator
-	 * @return
+	 * @return The mandator object
 	 */
 	public static Mandator getMandator(BundleContext context, String id) {
 		Mandator mandator = null;

@@ -28,7 +28,7 @@ public interface MandatorService {
 	/**
 	 * Get a list of all available mandator.
 	 * 
-	 * @return
+	 * @return The mandator keys as an array
 	 */
 	String[] getMandatorList();
 	
@@ -36,7 +36,7 @@ public interface MandatorService {
 	 * Gets the mandator with the id
 	 * 
 	 * @param id The id of the mandator
-	 * @return
+	 * @return The mandator object
 	 */
 	Mandator getMandator(String id);
 	
