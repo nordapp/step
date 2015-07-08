@@ -202,7 +202,7 @@ public class ScriptCacheImpl implements ScriptCache {
 	 * Returns the name of an element of the buffer
 	 * 
 	 * @param index The index of the cached element
-	 * @return
+	 * @return The name
 	 */
 	public String getName(int index) {
 		return names[index];
@@ -212,7 +212,7 @@ public class ScriptCacheImpl implements ScriptCache {
 	 * Reads a script from the cache
 	 * 
 	 * @param index The index of the cached element
-	 * @return
+	 * @return The String read
 	 * @throws IOException
 	 */
 	public String read(int index) throws IOException {

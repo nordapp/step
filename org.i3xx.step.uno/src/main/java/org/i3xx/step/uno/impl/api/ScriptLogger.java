@@ -49,7 +49,7 @@ public class ScriptLogger extends ScriptableObject{
 	/**
 	 * Prints the value out. Use this with the FunctionObject of Rhino
 	 * 
-	 * @param value
+	 * @param value The value to log
 	 */
 	public void info(String value) {
 		logger.info(value);
@@ -58,7 +58,12 @@ public class ScriptLogger extends ScriptableObject{
 	/**
 	 * Prints the value out. Use this with the FunctionObject of Rhino
 	 * 
-	 * @param value
+	 * @param stmt The statement
+	 * @param arg0 An argument to be used in the statement
+	 * @param arg1 An argument to be used in the statement
+	 * @param arg2 An argument to be used in the statement
+	 * @param arg3 An argument to be used in the statement
+	 * @param arg4 An argument to be used in the statement
 	 */
 	public void info(String stmt, Object arg0, Object arg1, Object arg2, Object arg3, Object arg4) {
 		logger.info(stmt, arg0, arg1, arg2, arg3, arg4);

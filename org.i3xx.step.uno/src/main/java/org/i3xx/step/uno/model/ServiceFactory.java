@@ -27,7 +27,7 @@ public interface ServiceFactory {
 	 * Returns the instance of the service
 	 * 
 	 * @param fullname The full name of the service
-	 * @return
+	 * @return The service object
 	 */
 	Object getInstance(String fullname) throws InstantiationException, IllegalAccessException;
 }

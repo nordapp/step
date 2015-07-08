@@ -49,7 +49,7 @@ public interface EngineBaseService {
 	/**
 	 * Load all bundles to the store
 	 * 
-	 * @param id The store key is the engine id
+	 * @param key The store key is the engine id
 	 * @throws IOException
 	 */
 	void setupStore(BigInteger key) throws IOException;	
@@ -74,7 +74,7 @@ public interface EngineBaseService {
 	 * group-1/*, group/*,
 	 * /^group-\d*\/artifact-\d*$
 	 * 
-	 * @param id The store key is the engine id
+	 * @param key The store key is the engine id
 	 * @param bundles The list of the bundles to load
 	 * @throws IOException
 	 */
@@ -90,14 +90,14 @@ public interface EngineBaseService {
 	/**
 	 * Gets a list of all available bundles
 	 * 
-	 * @return
+	 * @return The list of bundles
 	 */
 	List<String> getBundles();
 	
 	/**
 	 * Creates an engine with a random engine id
 	 *  
-	 * @return
+	 * @return The engine
 	 * @throws Exception
 	 */
 	Engine addEngine() throws Exception;
@@ -106,7 +106,7 @@ public interface EngineBaseService {
 	 * Creates a new engine or returns the existing engine with the specified id.
 	 * 
 	 * @param id The engine id
-	 * @return
+	 * @return The engine
 	 * @throws Exception
 	 */
 	Engine getEngine(BigInteger id) throws Exception;

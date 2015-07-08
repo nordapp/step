@@ -77,7 +77,7 @@ public interface ScriptCache {
 	 * Returns the name of an element of the buffer
 	 * 
 	 * @param index The index of the cached element
-	 * @return
+	 * @return The name
 	 */
 	String getName(int index);
 	
@@ -85,7 +85,7 @@ public interface ScriptCache {
 	 * reads a script from the cache
 	 * 
 	 * @param index The index of the cached element
-	 * @return
+	 * @return The script code
 	 * @throws IOException
 	 */
 	String read(int index) throws IOException;

@@ -30,7 +30,7 @@ public interface Sequencer {
 	 * Reads the manifest into a property map.
 	 * 
 	 * @param manifest
-	 * @return
+	 * @return The manifest property map
 	 */
 	Map<String, String> readManifest(String manifest);
 	
@@ -98,7 +98,7 @@ public interface Sequencer {
 	 * Gets the step card at the index without moving the pointer.
 	 * 
 	 * @param index The index
-	 * @return
+	 * @return The StepCard
 	 */
 	StepCard get(int index);
 	
@@ -107,7 +107,7 @@ public interface Sequencer {
 	 * or -1 if nothing can be found.
 	 * 
 	 * @param symbolicName The symbolic name
-	 * @return
+	 * @return The index as integer
 	 */
 	int find(String symbolicName);
 	

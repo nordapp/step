@@ -53,7 +53,7 @@ public class FunctionWrapper extends ScriptableObject {
 	}
     
 	/**
-	 * @param function
+	 * 
 	 */
 	public FunctionWrapper() {
 	}
@@ -64,7 +64,7 @@ public class FunctionWrapper extends ScriptableObject {
 	 * @param function The script function object (a function name not a function object is used)
 	 * @param target The target that uses the function (to select the interface used by the caller). 
 	 * @param funcScope The scope the function is defined (optional or null).
-	 * @return
+	 * @return A generic object of the interface type NotifyValueService.Change
 	 */
 	public Object functionWrap(Object function, Object target, Object funcScope) {
 		//The funtion scope may be null or missing

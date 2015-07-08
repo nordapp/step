@@ -264,7 +264,7 @@ public class ScriptEngine {
 	/**
 	 * Gets a fork with the shared scope as parent scope
 	 * 
-	 * @return
+	 * @return The script engine
 	 */
 	public ScriptEngine fork() {
         Context context = Context.enter();
@@ -288,7 +288,7 @@ public class ScriptEngine {
 	/**
 	 * Gets the runtime engine to run the loaded scripts with the scope
 	 * 
-	 * @return
+	 * @return The script runtime
 	 */
 	public ScriptRuntime runtime() {
 		
@@ -302,7 +302,7 @@ public class ScriptEngine {
 	 * 
 	 * @param name A function or object name
 	 * @param object The object to start relative from.
-	 * @return
+	 * @return The scriptable object
 	 */
 	public Scriptable searchObject(String name, Scriptable object) {
 		

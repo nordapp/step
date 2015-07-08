@@ -41,7 +41,7 @@ public class KeyItemWalker {
 	/**
 	 * Walks the tree of KeyItems
 	 * 
-	 * @param root The start node
+	 * @param start The start node
 	 */
 	public void walk(KeyItem start) {
 		visitor.visit(start);

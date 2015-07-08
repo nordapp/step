@@ -201,7 +201,7 @@ public interface Engine {
 	void setServiceBridge(OSGiServiceBridge serviceBridge);
 	
 	/**
-	 * @return
+	 * @return The login flag
 	 */
 	boolean isLogin();
 	

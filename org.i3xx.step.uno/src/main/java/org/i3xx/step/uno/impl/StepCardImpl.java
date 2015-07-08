@@ -291,7 +291,7 @@ public class StepCardImpl implements StepCard {
 	}
 	
 	/**
-	 * @return
+	 * @return The import list
 	 */
 	public List<String> getImport() {
 		return importList;
@@ -305,7 +305,7 @@ public class StepCardImpl implements StepCard {
 	}
 	
 	/**
-	 * @return
+	 * @return The export list
 	 */
 	public List<String> getExport() {
 		return exportList;

@@ -78,7 +78,7 @@ public class ContextPropertiesService implements BuiltinService {
 	 * 
 	 * @param names The names of the properties to be put into the JSON
 	 * 		(or null for all properties).
-	 * @return
+	 * @return The JSON
 	 * @throws Exception
 	 */
 	public String toJSON(String[] names) throws Exception {

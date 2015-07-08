@@ -33,8 +33,8 @@ public interface StepContext {
 	/**
 	 * The service getter. A service may be every java object.
 	 * 
-	 * @param name The full name of the service
-	 * @return
+	 * @param fullname The full name of the service
+	 * @return The service
 	 */
 	Object getService(String fullname) throws Exception;
 	

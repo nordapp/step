@@ -78,7 +78,7 @@ public class ServiceFactoryService implements BuiltinService {
 	 * Registers a class to the factory
 	 * 
 	 * @param key The key
-	 * @param clazz The object or class to get a new instance
+	 * @param object The object or class to get a new instance
 	 */
 	public void register(String key, Object object) {
 		registry.put(key, new RegistryEntry(object));
@@ -88,7 +88,7 @@ public class ServiceFactoryService implements BuiltinService {
 	 * Registers a classname to the factory
 	 * 
 	 * @param key The key
-	 * @param clazz The class
+	 * @param fullname The name of the class
 	 * @throws ClassNotFoundException 
 	 */
 	public void registerClass(String key, String fullname) throws ClassNotFoundException {

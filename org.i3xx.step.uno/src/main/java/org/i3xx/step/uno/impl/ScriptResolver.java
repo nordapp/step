@@ -54,7 +54,7 @@ import org.i3xx.util.store.Store;
  * The i3xx.js or i3xx-small.js must be annotated in the first comment,
  * because the feature command is not available there:
  * 
- *     @feature = <the-name-of-the-feature>
+ *     &#064;feature = <the-name-of-the-feature>
  *     
  * The resolver take a look into the source and try to ensure every requested
  * feature to be loaded before its use. If the resolving is not possible the

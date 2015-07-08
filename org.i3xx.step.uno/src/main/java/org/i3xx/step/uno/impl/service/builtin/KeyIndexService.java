@@ -82,7 +82,6 @@ public class KeyIndexService implements BuiltinService {
 	
 	/**
 	 * @param key Adds a key to the index
-	 * @return
 	 */
 	public void addKey(String key) {
 		process(split(key), true);
@@ -92,7 +91,7 @@ public class KeyIndexService implements BuiltinService {
 	 * Gets a KeyItem from the index (creates one if not present)
 	 * 
 	 * @param key
-	 * @return
+	 * @return The KeyItem
 	 */
 	public KeyItem getKey(String key) {
 		return process(split(key), false);
@@ -101,6 +100,7 @@ public class KeyIndexService implements BuiltinService {
 	/**
 	 * Removes a key from the index
 	 * @param key
+	 * @return True if the element is removed, false if it is not available.
 	 */
 	public boolean removeKey(String key) {
 		String[] arr = split(key);
@@ -148,7 +148,7 @@ public class KeyIndexService implements BuiltinService {
 	 * Splits the key
 	 * 
 	 * @param key
-	 * @return
+	 * @return The result String array
 	 */
 	private String[] split(String key) {
 		
@@ -166,6 +166,7 @@ public class KeyIndexService implements BuiltinService {
 	 * 
 	 * @param key The key
 	 * @parem create The factory flag
+	 * @return KeyItem
 	 */
 	private KeyItem process(String[] arr, boolean create) {
 		

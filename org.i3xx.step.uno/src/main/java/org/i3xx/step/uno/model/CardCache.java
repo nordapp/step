@@ -42,22 +42,22 @@ public interface CardCache {
 	/**
 	 * The size of the cache
 	 * 
-	 * @return
+	 * @return The size
 	 */
 	int size();
 	
 	/**
 	 * Gets a card from the cache
 	 * 
-	 * @param index
-	 * @return
+	 * @param index The index of the card
+	 * @return The StepCard
 	 */
 	StepCard getCard(int index);
 	
 	/**
 	 * Get all cards from the cache
 	 * 
-	 * @return
+	 * @return A list of StepCards
 	 */
 	List<StepCard> getCards();
 

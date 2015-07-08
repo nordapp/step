@@ -33,7 +33,7 @@ public final class StepPolicy {
 	 * The next start resumes the work.
 	 * 
 	 * @param stepContext The StepContext
-	 * @return
+	 * @return The flag
 	 */
 	public static boolean isInterrupted(StepContext stepContext) {
 		
@@ -64,7 +64,7 @@ public final class StepPolicy {
 	 * The value turns to 'false' after it has been read.
 	 * 
 	 * @param stepContext The StepContext
-	 * @return
+	 * @return The flag
 	 */
 	public static boolean isPersistent(StepContext stepContext) {
 		

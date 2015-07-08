@@ -140,7 +140,7 @@ public interface StepCard extends Serializable {
 	void setFunction(String function);
 	
 	/**
-	 * @return
+	 * @return The import list
 	 */
 	List<String> getImport();
 	
@@ -150,7 +150,7 @@ public interface StepCard extends Serializable {
 	void setImport(List<String> list);
 	
 	/**
-	 * @return
+	 * @return The export list
 	 */
 	List<String> getExport();
 	

@@ -605,7 +605,7 @@ public class EngineImpl implements Engine {
 	}
 
 	/**
-	 * @return
+	 * @return The login flag
 	 */
 	public boolean isLogin() {
 		return fLogin;
@@ -622,7 +622,7 @@ public class EngineImpl implements Engine {
 	 * Creates a store entry to store data persistent.
 	 * 
 	 * @param id The id of the store entry
-	 * @return
+	 * @return The StoreEntry
 	 */
 	private StoreEntry createEntry(BigInteger id) {
 		

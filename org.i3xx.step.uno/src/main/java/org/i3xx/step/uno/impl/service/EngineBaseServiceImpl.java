@@ -377,7 +377,7 @@ public class EngineBaseServiceImpl implements EngineBaseService {
 	 * @param context The bundle context
 	 * @param mandatorId The id of the mandator
 	 * @param engineBaseId The id of the engine base
-	 * @return
+	 * @return The EngineBaseService
 	 * @throws InvalidSyntaxException
 	 */
 	public static EngineBaseService getService(BundleContext context, String mandatorId, String engineBaseId) throws InvalidSyntaxException {

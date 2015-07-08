@@ -70,7 +70,7 @@ public class ImAndExport {
 	}
 	
 	/**
-	 * @param sequencer
+	 * @param sequencer The sequencer
 	 * @throws IOException 
 	 */
 	public void analyzeCards(Sequencer sequencer) throws IOException {
@@ -211,7 +211,7 @@ public class ImAndExport {
 	
 	/**
 	 * @param file
-	 * @return
+	 * @return The content of the file
 	 * @throws IOException
 	 */
 	private String readFile(File file) throws IOException {

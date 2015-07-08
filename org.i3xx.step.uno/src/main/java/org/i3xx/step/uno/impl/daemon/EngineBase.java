@@ -218,7 +218,7 @@ public class EngineBase {
 	 * to load the script and manifest data of the base.
 	 * 
 	 * @param id The id of the engine (each engine has it's own id)
-	 * @return
+	 * @return The engine
 	 * @throws IOException
 	 */
 	public Engine createEngine(BigInteger id) throws IOException {
@@ -259,7 +259,7 @@ public class EngineBase {
 	 * Returns true if an engine exists
 	 * 
 	 * @param id The id of the engine (each engine has it's own id)
-	 * @return
+	 * @return eturns true if an engine exists, false otherwise.
 	 * @throws IOException 
 	 */
 	public boolean exists(BigInteger id) throws IOException {
@@ -464,8 +464,8 @@ public class EngineBase {
 	}
 	
 	/**
-	 * @param json
-	 * @return
+	 * @param json The JSON String
+	 * @return The data from the JSON
 	 */
 	private Map<String, String> fromJSON(String json) {
 		GsonBuilder gsonBuilder = new GsonBuilder();
@@ -488,8 +488,8 @@ public class EngineBase {
 	}
 	
 	/**
-	 * @param props
-	 * @return
+	 * @param props The property map
+	 * @return The JSON-String
 	 */
 	private String toJSON(Map<String, String> props) {
 		Gson gson = new Gson();

@@ -358,7 +358,7 @@ public class ContextImpl implements StepContext {
 		void setServiceFactory(ServiceFactoryService serviceFactory);
 		
 		/**
-		 * @param serviceFactory sets the service factory
+		 * @param factory sets the service factory
 		 */
 		void setServiceFactory(ServiceFactory factory);
 		

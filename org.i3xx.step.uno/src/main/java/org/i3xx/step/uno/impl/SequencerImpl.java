@@ -71,7 +71,7 @@ public class SequencerImpl implements Sequencer {
 	 * Reads the manifest into a property map
 	 * 
 	 * @param manifest
-	 * @return
+	 * @return The manifest property map
 	 */
 	public Map<String, String> readManifest(String manifest) {
 		
@@ -295,7 +295,7 @@ public class SequencerImpl implements Sequencer {
 	 * Gets the step card at the index without moving the pointer.
 	 * 
 	 * @param index The index
-	 * @return
+	 * @return The step card
 	 */
 	public StepCard get(int index) {
 		return list.get(index);
@@ -306,7 +306,7 @@ public class SequencerImpl implements Sequencer {
 	 * or -1 if nothing can be found.
 	 * 
 	 * @param symbolicName The symbolic name
-	 * @return
+	 * @return The index as integer
 	 */
 	public int find(String symbolicName) {
 		for(int i=0;i<list.size();i++) {

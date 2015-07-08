@@ -73,7 +73,7 @@ public class VerifyValueService implements BuiltinService {
 	 * Returns true if the value is Serializable or a String or a Number or null
 	 * 
 	 * @param value The value
-	 * @return
+	 * @return Returns true if the value is Serializable or a String or a Number or null, false otherwise
 	 */
 	public boolean verify(Object value) {
 		return (value==null || value instanceof Serializable || value instanceof Number || value instanceof String);

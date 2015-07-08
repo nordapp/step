@@ -37,7 +37,7 @@ public interface OSGiServiceBridge {
 	 * 
 	 * @param name The name of the service to be accessed
 	 * @param properties The properties to select the service
-	 * @return
+	 * @return The service object
 	 */
 	Object getService(String name, Map<String, Object> properties);
 }
