@@ -13,7 +13,6 @@
   	<project.inceptionYear>2014</project.inceptionYear>
   	<!-- This is a bug fix, the version defined in the parent-project doesn't exist. -->
   	<util.store.version>[0.1.0,0.2)</util.store.version>
-  	<step.zero.version>0.1.0-SNAPSHOT</step.zero.version>
   </properties>
   
   <scm>
