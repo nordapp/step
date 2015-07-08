@@ -29,49 +29,49 @@ public interface DbFile {
 	 * Returns true if the file exists, false otherwise. If the file
 	 * doesn't exist, the query returns no result.
 	 * 
-	 * @return
+	 * @return The flag
 	 */
 	boolean hasFile();
 	
 	/**
 	 * Gets the mime type of the file
 	 * 
-	 * @return
+	 * @return The mimetype
 	 */
 	String getMimetype();
 	
 	/**
 	 * Gets the filename of the file
 	 * 
-	 * @return
+	 * @return The filename
 	 */
 	String getFilename();
 	
 	/**
 	 * Gets the id of the file in the database
 	 * 
-	 * @return
+	 * @return The id object
 	 */
 	Object getId();
 	
 	/**
 	 * gets the length of the file
 	 * 
-	 * @return
+	 * @return The length of the file
 	 */
 	long getLength();
 	
 	/**
 	 * Gets the input stream of the file
 	 * 
-	 * @return
+	 * @return The content of the file as InputStream
 	 */
 	InputStream getInputStream();
 	
 	/**
 	 * Gets the data of the upload
 	 * 
-	 * @return
+	 * @return The data as a long integer
 	 */
 	long getDate();
 }

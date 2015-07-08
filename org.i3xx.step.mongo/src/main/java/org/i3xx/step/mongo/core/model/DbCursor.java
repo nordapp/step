@@ -28,35 +28,35 @@ public interface DbCursor {
 	/**
 	 * Gets the number of elements iterated.
 	 * 
-	 * @return
+	 * @return The number of elements
 	 */
 	public int numSeen();
 	
 	/**
 	 * Gets the first element of the cursor.
 	 * 
-	 * @return
+	 * @return The element as Object
 	 */
 	public DbObject one();
 	
 	/**
 	 * Gets the current element of the cursor.
 	 * 
-	 * @return
+	 * @return The current element as Object
 	 */
 	public DbObject curr();
 	
 	/**
 	 * Returns true if the cursor has one more element.
 	 * 
-	 * @return
+	 * @return The flag
 	 */
 	public boolean hasNext();
 	
 	/**
 	 * Gets the next element of the cursor.
 	 * 
-	 * @return
+	 * @return The element as Object
 	 */
 	public DbObject next();
 }

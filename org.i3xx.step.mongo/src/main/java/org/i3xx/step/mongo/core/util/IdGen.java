@@ -32,7 +32,7 @@ public class IdGen {
 	/**
 	 * Gets 128 bit IdRep representation with a generated UUID
 	 * 
-	 * @return
+	 * @return The IdRep object
 	 */
 	public static final IdRep getUUID() {
 		return new JavaIdRep( UUID.randomUUID() );
@@ -42,7 +42,7 @@ public class IdGen {
 	 * Gets 128 bit IdRep representation from an UUID-String
 	 * 
 	 * @param uuid
-	 * @return
+	 * @return The IdRep object
 	 */
 	public static final IdRep fromString( String uuid ) {
 		return new JavaIdRep( UUID.fromString(uuid) );
@@ -51,7 +51,7 @@ public class IdGen {
 	/**
 	 * Gets a 128 bit IdRep in an URL save representation (slow)
 	 * 
-	 * @return
+	 * @return The IdRep object
 	 */
 	public static final String getURLSafeString(IdRep ui) {
 		return Base64.encodeBase64URLSafeString( ui.getBytes() );
@@ -61,7 +61,7 @@ public class IdGen {
 	 * Gets a 128 bit IdRep from an URL save representation
 	 * 
 	 * @param urlSave
-	 * @return
+	 * @return The IdRep object
 	 */
 	public static final IdRep fromURLSaveString(String urlSave) {
 		
@@ -75,7 +75,7 @@ public class IdGen {
 	/**
 	 * Gets a 128 bit IdRep from a BigInteger
 	 * 
-	 * @return
+	 * @return The IdRep object
 	 */
 	public static final IdRep fromBigInteger( BigInteger ui ) {
 		

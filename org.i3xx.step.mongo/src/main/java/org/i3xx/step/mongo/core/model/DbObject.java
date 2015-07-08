@@ -31,7 +31,7 @@ public interface DbObject {
 	 * Indicates whether a field exists or not.
 	 * 
 	 * @param key
-	 * @return
+	 * @return The flag that indicates the field
 	 */
 	boolean containsField(String key);
 	
@@ -39,28 +39,28 @@ public interface DbObject {
 	 * Gets a value
 	 * 
 	 * @param key
-	 * @return
+	 * @return The value
 	 */
 	Object get(String key);
 	
 	/**
 	 * Gets the key set
 	 * 
-	 * @return
+	 * @return The Set of keys
 	 */
 	Set<String> keySet();
 	
 	/**
 	 * Returns the result as a map
 	 * 
-	 * @return
+	 * @return The Map
 	 */
 	Map<String, Object> getMap();
 	
 	/**
 	 * returns the result as a String
 	 * 
-	 * @return
+	 * @return The String
 	 */
 	String toString();
 	

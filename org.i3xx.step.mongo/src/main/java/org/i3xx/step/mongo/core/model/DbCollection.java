@@ -30,7 +30,7 @@ public interface DbCollection {
 	/**
 	 * Gets a cursor on all elements in the collection
 	 * 
-	 * @return
+	 * @return The database cursor
 	 */
 	DbCursor getCursor();
 	
@@ -38,7 +38,7 @@ public interface DbCollection {
 	 * Gets a cursor on the result of the query
 	 * 
 	 * @param jsonQuery
-	 * @return
+	 * @return The database cursor
 	 */
 	DbCursor getCursor(String jsonQuery);
 	
@@ -46,7 +46,7 @@ public interface DbCollection {
 	 * Gets the element matching the id
 	 * 
 	 * @param id
-	 * @return
+	 * @return The element as Object
 	 */
 	DbObject findOneFromId(String id);
 	
@@ -54,7 +54,7 @@ public interface DbCollection {
 	 * Gets the first element matching the query
 	 * 
 	 * @param jsonQuery
-	 * @return
+	 * @return The element as Object
 	 */
 	DbObject findOne(String jsonQuery);
 	
@@ -63,14 +63,14 @@ public interface DbCollection {
 	 * 
 	 * @param jsonQuery
 	 * @param jsonFields
-	 * @return
+	 * @return The element as Object
 	 */
 	DbObject findOne(String jsonQuery, String jsonFields);
 	
 	/**
 	 * Gets the number of elements ion this query
 	 * 
-	 * @return
+	 * @return The number of elements
 	 */
 	long count();
 	
@@ -78,7 +78,7 @@ public interface DbCollection {
 	 * Gets the info about the indexes of the collection. Each object
 	 * in the list is the "info document" from MongoDB.
 	 * 
-	 * @return
+	 * @return The information as a list of Objects
 	 */
 	List<DbObject> getIndexInfo();
 	

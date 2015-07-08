@@ -30,34 +30,31 @@ public interface DbFileStore {
 	
 	/**
 	 * @param buffer
-	 * @param jsonProps
 	 * @throws IOException
 	 */
 	DbInputFile createFile(byte[] buffer) throws IOException;
 	
 	/**
 	 * @param file
-	 * @param jsonProps
 	 * @throws IOException
 	 */
 	DbInputFile createFile(File file) throws IOException;
 	
 	/**
 	 * @param in
-	 * @param jsonProps
 	 * @throws IOException
 	 */
 	DbInputFile createFile(InputStream in) throws IOException;
 	
 	/**
 	 * @param query
-	 * @return
+	 * @return The DbFile object
 	 */
 	DbFile getFile(String query);
 	
 	/**
 	 * @param id
-	 * @return
+	 * @return The DbFile object
 	 */
 	DbFile getFileFromId(String id);
 }

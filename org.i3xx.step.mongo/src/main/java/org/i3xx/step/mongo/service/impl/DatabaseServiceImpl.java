@@ -82,11 +82,10 @@ public class DatabaseServiceImpl implements DatabaseService {
 	/**
 	 * Gets the session with the id
 	 * 
-	 * @param context The bundle context
+	 * @param bundleContext The bundle context
 	 * @param cert The certificate
-	 * @param id The id of the mandator
-	 * @param sessionId The id of the session
-	 * @return
+	 * @param mandatorId The id of the mandator
+	 * @return The database service
 	 */
 	public static DatabaseService getDatabase(BundleContext bundleContext, String cert, String mandatorId) {
 		

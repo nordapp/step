@@ -26,27 +26,27 @@ import java.math.BigInteger;
 public interface IdRep {
 	
 	/**
-	 * @return
+	 * @return The most significant 64 bits
 	 */
 	long getMostSignificantBits();
 	
 	/**
-	 * @return
+	 * @return The least significant 64 bits
 	 */
 	long getLeastSignificantBits();
 	
 	/**
-	 * @return
+	 * @return The content as a byte array
 	 */
 	byte[] getBytes();
 	
 	/**
-	 * @return
+	 * @return The content as a BigInteger
 	 */
 	BigInteger toBigInteger();
 	
 	/**
-	 * @return
+	 * @return The string representation
 	 */
 	String toString();
 }

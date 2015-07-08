@@ -42,7 +42,7 @@ public interface DbDatabase {
 	/**
 	 * @param colname The name of the collection to create
 	 * @param optionsString The option string as JSON string or '{}' for default
-	 * @return
+	 * @return The database collection object
 	 */
 	DbCollection createCollection(String colname, String optionsString);
 	
@@ -50,14 +50,14 @@ public interface DbDatabase {
 	 * Gets a collection of the database.
 	 * 
 	 * @param colname The name of the collection.
-	 * @return
+	 * @return The database collection object
 	 */
 	DbCollection getCollection(String colname);
 	
 	/**
 	 * Gets a file store of the database.
 	 * 
-	 * @return
+	 * @return The database file store
 	 */
 	DbFileStore getFileStore();
 	
@@ -65,7 +65,7 @@ public interface DbDatabase {
 	 * Gets a file store of the database.
 	 * 
 	 * @param bucket The name of the bucket (optional namespace, may be null).
-	 * @return
+	 * @return The database file store
 	 */
 	DbFileStore getFileStore(String bucket);
 	
@@ -73,7 +73,7 @@ public interface DbDatabase {
 	 * Generates an 128-bit UUID
 	 * 
 	 * @param type UUID_AS_BIGINT | UUID_AS_STRING | UUID_AS_URLSAVESTRING
-	 * @return
+	 * @return The id object
 	 */
 	Object getId(int type);
 }
