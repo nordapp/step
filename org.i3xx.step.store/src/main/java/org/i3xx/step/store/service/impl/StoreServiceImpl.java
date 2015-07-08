@@ -165,11 +165,10 @@ public class StoreServiceImpl implements StoreService {
 	/**
 	 * Gets the store with the id
 	 * 
-	 * @param context The bundle context
+	 * @param bundleContext The bundle context
 	 * @param cert The certificate
-	 * @param id The id of the mandator
-	 * @param sessionId The id of the session
-	 * @return
+	 * @param mandatorId The id of the mandator
+	 * @return The store service
 	 */
 	public static StoreService getStore(BundleContext bundleContext, String cert, String mandatorId) {
 		
