@@ -11,10 +11,6 @@
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.inceptionYear>2014</project.inceptionYear>
-  	<!-- This is a bug fix, the version defined in the parent-project doesn't exist. -->
-  	<util.store.version>[0.1.0,0.2)</util.store.version>
-  	<!-- Fix to pass a property to test -->
-  	<release.arguments></release.arguments>
   </properties>
   
   <scm>
@@ -25,19 +21,12 @@
   <parent>
     <groupId>org.i3xx.parent</groupId>
     <artifactId>parent-step-project</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
   </parent>
   
   
   <build>
 	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-release-plugin</artifactId>
-			<configuration>
-		   		<arguments>${release.arguments}</arguments>
-			</configuration>
-		</plugin>
 		
 		<plugin>
 			<groupId>org.apache.felix</groupId>
