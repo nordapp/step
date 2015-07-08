@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.i3xx.step</groupId>
   <artifactId>org.i3xx.step.mongo</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <name>NordApp OfficeBase :: mongo</name>
   <packaging>bundle</packaging>
@@ -21,7 +21,7 @@
   
   <scm>
   	<developerConnection>scm:git:https://github.com/nordapp/step</developerConnection>
-  	<tag>org.i3xx.step.mongo-0.1.0</tag>
+  	<tag>org.i3xx.step.mongo-0.0.0</tag>
   </scm>
   
   <build>
