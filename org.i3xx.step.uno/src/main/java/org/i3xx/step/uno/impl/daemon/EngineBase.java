@@ -451,7 +451,7 @@ public class EngineBase {
 		if( ! dir.exists())
 			throw new NoSuchElementException("The directory "+dir.getAbsolutePath()+" doesn't exist.");
 		if( ! dir.isDirectory())
-			throw new NoSuchElementException("The fie "+dir.getAbsolutePath()+" is not a directory.");
+			throw new NoSuchElementException("The file "+dir.getAbsolutePath()+" is not a directory.");
 		
 		//The location is /bin/bundle/group-id/artifact-id
 		ScriptLoader loader = new ScriptLoader();
