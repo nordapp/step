@@ -13,6 +13,8 @@
   	<project.inceptionYear>2014</project.inceptionYear>
   	<!-- This is a bug fix, the version defined in the parent-project doesn't exist. -->
   	<util.store.version>[0.1.0,0.2)</util.store.version>
+  	<!-- Fix to pass a property to test -->
+  	<workspace.home></workspace.home>
   </properties>
   
   <scm>
@@ -29,6 +31,14 @@
   
   <build>
 	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-release-plugin</artifactId>
+			<configuration>
+		   		<arguments>${workspace.home}</arguments>
+			</configuration>
+		</plugin>
+		
 		<plugin>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>maven-bundle-plugin</artifactId>
