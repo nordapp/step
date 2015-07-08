@@ -60,7 +60,7 @@ public class ContextServiceAdapter /* DO NOT IMPLEMENT BuiltinService */ {
 	 * Gets a parameter from the context
 	 * 
 	 * @param key The key of the parameter to get
-	 * @return
+	 * @return The value of the parameter
 	 */
 	public Object get(String key){ 
 		return this.context.getValue(key);

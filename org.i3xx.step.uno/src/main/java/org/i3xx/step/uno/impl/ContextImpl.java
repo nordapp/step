@@ -202,7 +202,7 @@ public class ContextImpl implements StepContext {
 	/**
 	 * Gets the shared scope of the script engine
 	 * 
-	 * @return
+	 * @return The shared scope
 	 */
 	public Scriptable getScope() {
 		return sharedScope;
