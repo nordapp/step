@@ -106,7 +106,7 @@ public class SessionServiceImpl implements SessionService, EventHandler {
 	/**
 	 * @param mandatorId
 	 * @param sessionId
-	 * @return
+	 * @return The session service
 	 */
 	private Session getSession(String mandatorId, String sessionId) {
 		
@@ -140,7 +140,7 @@ public class SessionServiceImpl implements SessionService, EventHandler {
 	 * 
 	 * @param mandatorId The id of the mandator (optional)
 	 * @param sessionId The id of the session (optional)
-	 * @return
+	 * @return The session reference
 	 */
 	public ServiceReference<?>[] getSessionReference(String mandatorId, String sessionId) {
 		
@@ -251,11 +251,11 @@ public class SessionServiceImpl implements SessionService, EventHandler {
 	/**
 	 * Gets the session with the id
 	 * 
-	 * @param context The bundle context
+	 * @param bundleContext The bundle context
 	 * @param cert The certificate
-	 * @param id The id of the mandator
+	 * @param mandatorId The id of the mandator
 	 * @param sessionId The id of the session
-	 * @return
+	 * @return The session
 	 */
 	public static Session getSession(BundleContext bundleContext, String cert, String mandatorId, String sessionId) {
 		

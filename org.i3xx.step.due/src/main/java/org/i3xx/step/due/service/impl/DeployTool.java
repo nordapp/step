@@ -206,7 +206,7 @@ public class DeployTool {
 	/**
 	 * @param mandatorPath
 	 * @param processId
-	 * @return
+	 * @return The zip filename
 	 */
 	protected String getLatestZipFile(String mandatorPath, String processId) {
 		
@@ -233,7 +233,7 @@ public class DeployTool {
 	 * @param processId
 	 * @param groupId
 	 * @param artifactId
-	 * @return
+	 * @return The CRC32 checksum
 	 * @throws IOException 
 	 */
 	protected long processCRC(String mandatorPath, String processId, String groupId,
@@ -361,7 +361,7 @@ public class DeployTool {
 	 * Builds a ZIP file
 	 * 
 	 * @param tmpPath
-	 * @return
+	 * @return The zip file
 	 * @throws IOException
 	 */
 	private File fileZip(FilePath tmpPath) throws IOException {

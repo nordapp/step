@@ -38,7 +38,7 @@ public interface Session0Service {
 	 * 
 	 * @param sessionService The session service
 	 * @param symbolService The symbol service
-	 * @param mandatorIdThe mandator id
+	 * @param mandatorId The mandator id
 	 */
 	public void initialize(SessionService sessionService, SymbolService symbolService, String mandatorId);
 }

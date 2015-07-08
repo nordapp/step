@@ -41,21 +41,21 @@ public interface Session {
 	/**
 	 * Gets the session id
 	 * 
-	 * @return
+	 * @return The session id
 	 */
 	String getSessionId();
 	
 	/**
 	 * Gets the mandator
 	 * 
-	 * @return
+	 * @return The mandator id
 	 */
 	String getMandator();
 	
 	/**
 	 * Get a set of keys of the key-value-pairs.
 	 * 
-	 * @return
+	 * @return The set of keys
 	 */
 	Set<String> getKeys();
 	
@@ -63,7 +63,7 @@ public interface Session {
 	 * Gets a value
 	 * 
 	 * @param key
-	 * @return
+	 * @return The value
 	 */
 	Object getValue(String key);
 	
@@ -83,28 +83,28 @@ public interface Session {
 	/**
 	 * Gets the start time of the session
 	 * 
-	 * @return
+	 * @return The timestamp
 	 */
 	long getStartTime();
 	
 	/**
 	 * Gets the timeout
 	 * 
-	 * @return
+	 * @return The timeout
 	 */
 	long getTimeout();
 	
 	/**
 	 * Returns true if the session is not destroyed and not running out of time.
 	 * 
-	 * @return
+	 * @return The flag
 	 */
 	boolean isValid();
 	
 	/**
 	 * Returns true if the session is not destroyed.
 	 * 
-	 * @return
+	 * @return The flag
 	 */
 	boolean isAlive();
 	

@@ -53,7 +53,7 @@ public interface ResourceService {
 	 * @param path The resource path relative to the mandator root
 	 * @param type The type of the resource
 	 * @param props Properties (optional)
-	 * @return
+	 * @return The resource as a String
 	 * @throws IOException If the resource cannot be read
 	 */
 	String getResource(String mandatorId, String groupId, String artifactId, String path, int type, Map<String, String> props) throws IOException;
@@ -67,7 +67,7 @@ public interface ResourceService {
 	 * @param path The resource path relative to the mandator root
 	 * @param type The type of the resource
 	 * @param props Properties (optional)
-	 * @return
+	 * @return The resource as an InputStream
 	 * @throws IOException If the resource cannot be read
 	 */
 	InputStream getResourceAsStream(String mandatorId, String groupId, String artifactId, String path, int type, Map<String, String> props) throws IOException;

@@ -46,7 +46,7 @@ public interface DeployService {
 	 * @param mandatorID The id of the mandator
 	 * @param groupID The id of the group
 	 * @param artifactID The id of the artifact
-	 * @return 
+	 * @return The zip file
 	 * 
 	 * @throws IOException
 	 */

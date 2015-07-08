@@ -36,7 +36,7 @@ public interface SessionService {
 	 * @param timeout The timeout of the session
 	 * @param sessionId The id of the session, if the sessionId is null a new id is created.
 	 * @param params The parameter of the session to be put to the service registry (not the session)
-	 * @return
+	 * @return The session
 	 * @throws SessionException If the session can't be created.
 	 * @throws SessionAlreadyExistsException If the sessionId exists.
 	 */
@@ -48,7 +48,7 @@ public interface SessionService {
 	 * @param cert The string to authenticate
 	 * @param mandatorId The mandator of the session
 	 * @param sessionId The id of the session
-	 * @return
+	 * @return The session
 	 */
 	Session getSession(String cert, String mandatorId, String sessionId);
 	/**
@@ -56,7 +56,7 @@ public interface SessionService {
 	 * 
 	 * @param mandatorId The id of the mandator (optional)
 	 * @param sessionId The id of the session (optional)
-	 * @return
+	 * @return The session reference
 	 */
 	ServiceReference<?>[] getSessionReference(String mandatorId, String sessionId);
 	
@@ -67,7 +67,7 @@ public interface SessionService {
 	 * 
 	 * @param mandatorId The id of the mandator (optional)
 	 * @param sessionId The id of the session
-	 * @return
+	 * @return The flag
 	 */
 	boolean exists(String mandatorId, String sessionId);
 	
@@ -77,7 +77,7 @@ public interface SessionService {
 	 * @param cert The string to authenticate
 	 * @param mandatorId The mandator of the session
 	 * @param sessionId The id of the session
-	 * @return
+	 * @return The flag, true if the service is destroyed properly, false otherwise.
 	 */
-	boolean destroy(String cert, String mandator, String sessionId);
+	boolean destroy(String cert, String mandatorId, String sessionId);
 }
