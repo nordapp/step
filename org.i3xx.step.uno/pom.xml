@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.i3xx.step</groupId>
   <artifactId>org.i3xx.step.uno</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
   <packaging>bundle</packaging>
   <url>http://maven.apache.org</url>
   <name>NordApp OfficeBase :: uno</name>
@@ -15,7 +15,7 @@
   
   <scm>
   	<developerConnection>scm:git:https://github.com/nordapp/step</developerConnection>
-  	<tag>org.i3xx.step.uno-0.0.0</tag>
+  	<tag>org.i3xx.step.uno-0.1.0</tag>
   </scm>
   
   <parent>
@@ -40,7 +40,7 @@
 					<Bundle-Name>${project.name}</Bundle-Name>
 					<Bundle-Version>${project.version}</Bundle-Version>
 					<Bundle-Activator>org.i3xx.step.uno.core.impl.activator.Uno</Bundle-Activator>
-					<Embed-Dependency></Embed-Dependency>
+					<Embed-Dependency />
 					<Export-Package>
 						com.cloudbees.util.rhino.sandbox,
 						org.i3xx.step.uno.core.impl.activator,
@@ -112,7 +112,7 @@
 						org.w3c.dom,
 						org.xml.sax
 					</Import-Package>
-					<Private-Package></Private-Package>
+					<Private-Package />
 					<!--<Export-Service></Export-Service>-->
 				</instructions>
 			</configuration>
@@ -122,13 +122,13 @@
 	
   	<resources>
   		<resource>
-  			<directory></directory>
+  			<directory />
   			<includes>
   				<include>OSGI-INF/**/*.*</include>
   			</includes>
   		</resource>
   		<resource>
-  			<directory></directory>
+  			<directory />
   			<includes>
   				<include>LICENSE/**/*.*</include>
   			</includes>
