@@ -21,7 +21,7 @@
   <parent>
     <groupId>org.i3xx.parent</groupId>
     <artifactId>parent-step-project</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.10</version>
   </parent>
   
   <dependencies>
@@ -111,9 +111,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.i3xx.eclipse.test</groupId>
-      <artifactId>workspace</artifactId>
-      <scope>test</scope>
+    	<groupId>org.i3xx.eclipse.test</groupId>
+    	<artifactId>workspace</artifactId>
+    	<scope>test</scope>
     </dependency>
   </dependencies>
   
