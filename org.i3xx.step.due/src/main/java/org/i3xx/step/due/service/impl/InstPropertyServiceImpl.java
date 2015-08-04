@@ -76,7 +76,7 @@ public class InstPropertyServiceImpl implements InstPropertyService {
 	public void setProperties(String mandatorId, String groupId, String artifactId, String path) throws IOException {
 		
 		checkPermission("write", "property");
-		logger.debug("Resource for mandator:{}, group:{} artifact:{} requested '{}'.",
+		logger.debug("Properties for mandator:{}, group:{} artifact:{} requested '{}'.",
 				mandatorId, groupId, artifactId, path);
 		
 		//The registration key
@@ -110,6 +110,7 @@ public class InstPropertyServiceImpl implements InstPropertyService {
 			String val = p.getProperty(key);
 			
 			props.put(groupId+"."+artifactId+"."+key, val);
+			logger.trace("Set property '{}.{}.{}={}'.", groupId, artifactId, key, val);
 		}
 		
 		org.i3xx.step.zero.service.model.mandator.PropertyService srv =
@@ -149,6 +150,8 @@ public class InstPropertyServiceImpl implements InstPropertyService {
 		// Register the new one
 		ServiceRegistration<?> srg = bundleContext.registerService(cName, srv, srvDict);
 		srvRegistration.put(regKey, srg);
+		
+		logger.trace("Register service:{}, properties:{}", cName, srvDict);
 	}
 	
 	/** Read a property file */
