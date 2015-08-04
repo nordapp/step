@@ -70,6 +70,7 @@ public class PropertyServiceTrackerImpl extends ServiceTracker<PropertyService, 
 		if(mandator==null)
 			throw new NoSuchElementException("The mandator '"+mandatorId+"' is not available.");
 		
+		logger.debug("Add and configure mandator service {}.", mandatorId);
 		for(String name : service.getPropertyNames()){
 			String value = service.getProperty(name);
 			mandator.setProperty(name, value);

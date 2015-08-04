@@ -184,6 +184,9 @@ public class MandatorImpl implements Mandator, ManagedService {
 	 * @param value The value of the property
 	 */
 	public void setProperty(String key, String value){
+		if(logger.isTraceEnabled()) {
+			logger.trace("Set property {}='{}'.", key, value);
+		}
 		properties.put(key, value);
 	}
 	
