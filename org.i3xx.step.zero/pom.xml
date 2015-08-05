@@ -76,26 +76,6 @@
 		<groupId>org.apache.felix</groupId>
 		<artifactId>org.apache.felix.configadmin</artifactId>
 	</dependency>
-	<!--<dependency>
-	    <groupId>org.apache.felix</groupId>
-	    <artifactId>org.apache.felix.fileinstall</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.karaf.jaas</groupId>
-	    <artifactId>org.apache.karaf.jaas.config</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.karaf.jaas</groupId>
-	    <artifactId>org.apache.karaf.jaas.modules</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.karaf.shell</groupId>
-	    <artifactId>org.apache.karaf.shell.console</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.karaf.jaas</groupId>
-	    <artifactId>org.apache.karaf.jaas.boot</artifactId>
-	</dependency>-->
 	
 	<dependency>
 		<groupId>org.osgi</groupId>
@@ -169,11 +149,6 @@
 						org.i3xx.util.general.setup.model;version="${util.general.setup.version}",
 						org.i3xx.util.platform.impl;version="${util.platform.version}",
 						org.apache.commons.codec.binary,
-						<!--org.apache.karaf.shell.api.action,
-						org.apache.karaf.shell.api.console,
-						org.apache.karaf.shell.api.action.lifecycle,
-						org.apache.karaf.shell.commands,
-						org.apache.karaf.shell.console,-->
 						org.apache.shiro,
 						org.apache.shiro.authc,
 						org.apache.shiro.authz,
