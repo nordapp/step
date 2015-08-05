@@ -76,7 +76,7 @@
 		<groupId>org.apache.felix</groupId>
 		<artifactId>org.apache.felix.configadmin</artifactId>
 	</dependency>
-	<dependency>
+	<!--<dependency>
 	    <groupId>org.apache.felix</groupId>
 	    <artifactId>org.apache.felix.fileinstall</artifactId>
 	</dependency>
@@ -95,7 +95,7 @@
 	<dependency>
 	    <groupId>org.apache.karaf.jaas</groupId>
 	    <artifactId>org.apache.karaf.jaas.boot</artifactId>
-	</dependency>
+	</dependency>-->
 	
 	<dependency>
 		<groupId>org.osgi</groupId>
@@ -153,7 +153,6 @@
 					
 					<Export-Package>
 						org.i3xx.step.zero.core.impl.activator,
-						org.i3xx.step.zero.core.impl.cmd,
 						org.i3xx.step.zero.security,
 						org.i3xx.step.zero.security.impl.shiro,
 						org.i3xx.step.zero.security.model,
@@ -170,11 +169,11 @@
 						org.i3xx.util.general.setup.model;version="${util.general.setup.version}",
 						org.i3xx.util.platform.impl;version="${util.platform.version}",
 						org.apache.commons.codec.binary,
-						org.apache.karaf.shell.api.action,
+						<!--org.apache.karaf.shell.api.action,
 						org.apache.karaf.shell.api.console,
 						org.apache.karaf.shell.api.action.lifecycle,
 						org.apache.karaf.shell.commands,
-						org.apache.karaf.shell.console,
+						org.apache.karaf.shell.console,-->
 						org.apache.shiro,
 						org.apache.shiro.authc,
 						org.apache.shiro.authz,
