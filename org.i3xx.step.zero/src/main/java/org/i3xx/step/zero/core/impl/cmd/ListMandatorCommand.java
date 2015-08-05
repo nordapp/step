@@ -21,26 +21,29 @@ package org.i3xx.step.zero.core.impl.cmd;
  */
 
 
-import org.apache.karaf.shell.commands.Command;
-import org.apache.karaf.shell.console.OsgiCommandSupport;
+import org.apache.karaf.shell.api.action.Action;
+import org.apache.karaf.shell.api.action.Command;
+import org.apache.karaf.shell.api.action.lifecycle.Service;
 import org.i3xx.step.zero.service.model.mandator.RootService;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Command(scope = "ob", name = "mandator-list", description="List all mandator")
-public class ListMandatorCommand extends OsgiCommandSupport {
+@Service
+public class ListMandatorCommand implements Action {
 
 	static Logger logger = LoggerFactory.getLogger(ListMandatorCommand.class);
 	
 	@Override
-	protected Object doExecute() throws Exception {
+	public Object execute() throws Exception {
 		
 		logger.info("List the mandator.");
         
         //get the service
-        BundleContext bc = getBundleContext();
+        BundleContext bc = FrameworkUtil.getBundle(ListMandatorCommand.class).getBundleContext();
         
         ServiceReference<RootService> srA = bc.getServiceReference(RootService.class);
         RootService rootService = bc.getService(srA);

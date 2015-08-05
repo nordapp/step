@@ -21,17 +21,20 @@ package org.i3xx.step.zero.core.impl.cmd;
  */
 
 
-import org.apache.karaf.shell.commands.Argument;
-import org.apache.karaf.shell.commands.Command;
-import org.apache.karaf.shell.console.OsgiCommandSupport;
+import org.apache.karaf.shell.api.action.Action;
+import org.apache.karaf.shell.api.action.Argument;
+import org.apache.karaf.shell.api.action.Command;
+import org.apache.karaf.shell.api.action.lifecycle.Service;
 import org.i3xx.step.zero.service.model.mandator.RootService;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Command(scope = "ob", name = "mandator-setup", description="Setup a mandator")
-public class SetupMandatorCommand extends OsgiCommandSupport {
+@Service
+public class SetupMandatorCommand implements Action {
 	
 	static Logger logger = LoggerFactory.getLogger(SetupMandatorCommand.class);
 	
@@ -45,12 +48,12 @@ public class SetupMandatorCommand extends OsgiCommandSupport {
     }
     
 	@Override
-	protected Object doExecute() throws Exception {
+	public Object execute() throws Exception {
 		
         logger.info("Setup the mandator '{}'.", arg);
         
         //get the service
-        BundleContext bc = getBundleContext();
+        BundleContext bc = FrameworkUtil.getBundle(SetupMandatorCommand.class).getBundleContext();
         
         ServiceReference<RootService> srA = bc.getServiceReference(RootService.class);
         RootService rootService = bc.getService(srA);

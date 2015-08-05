@@ -21,17 +21,20 @@ package org.i3xx.step.zero.core.impl.cmd;
  */
 
 
-import org.apache.karaf.shell.commands.Argument;
-import org.apache.karaf.shell.commands.Command;
-import org.apache.karaf.shell.console.OsgiCommandSupport;
+import org.apache.karaf.shell.api.action.Action;
+import org.apache.karaf.shell.api.action.Argument;
+import org.apache.karaf.shell.api.action.Command;
+import org.apache.karaf.shell.api.action.lifecycle.Service;
 import org.i3xx.step.zero.service.model.mandator.RootService;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Command(scope = "ob", name = "mandator-destroy", description="Destroys a mandator")
-public class DestroyMandatorCommand extends OsgiCommandSupport {
+@Service
+public class DestroyMandatorCommand implements Action {
 
 	static Logger logger = LoggerFactory.getLogger(DestroyMandatorCommand.class);
 	
@@ -39,13 +42,13 @@ public class DestroyMandatorCommand extends OsgiCommandSupport {
     String arg = null;
 
 	@Override
-	protected Object doExecute() throws Exception {
+	public Object execute() throws Exception {
 		String pid = arg;
 		
 		logger.info("Destroys the mandator '{}'.", pid);
         
         //get the service
-        BundleContext bc = getBundleContext();
+        BundleContext bc = FrameworkUtil.getBundle(DestroyMandatorCommand.class).getBundleContext();
         
         ServiceReference<RootService> srA = bc.getServiceReference(RootService.class);
         RootService rootService = bc.getService(srA);
