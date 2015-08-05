@@ -132,22 +132,6 @@
 		<groupId>org.apache.felix</groupId>
 		<artifactId>org.apache.felix.configadmin</artifactId>
 	</dependency>
-	<dependency>
-	    <groupId>org.apache.felix</groupId>
-	    <artifactId>org.apache.felix.fileinstall</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.karaf.jaas</groupId>
-	    <artifactId>org.apache.karaf.jaas.config</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.karaf.jaas</groupId>
-	    <artifactId>org.apache.karaf.jaas.modules</artifactId>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.karaf.shell</groupId>
-	    <artifactId>org.apache.karaf.shell.console</artifactId>
-	</dependency>
 	
 	<dependency>
 	    <groupId>org.apache.mina</groupId>
