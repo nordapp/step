@@ -179,9 +179,10 @@
 						org.i3xx.step.zero.service.impl.mandator;version="${step.zero.version}",
 						org.i3xx.step.zero.service.model.mandator;version="${step.zero.version}",
 						org.apache.commons.codec.binary,
+						<!-- VERSION 4.0.0 needs this
 						org.apache.karaf.shell.api.action,
 						org.apache.karaf.shell.api.console,
-						org.apache.karaf.shell.api.action.lifecycle,
+						org.apache.karaf.shell.api.action.lifecycle, -->
 						org.apache.karaf.shell.commands,
 						org.apache.karaf.shell.console,
 						org.apache.shiro,
