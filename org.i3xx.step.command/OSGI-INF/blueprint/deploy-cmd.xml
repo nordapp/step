@@ -201,9 +201,9 @@
     </command-bundle>
 	
 	<!-- Completer for the command bundle -->
-    <bean id="i3xx.step.uno.deploy.DeployCmdCompleter" class="org.i3xx.step.uno.core.impl.cmd.DeployCmdCompleter"/>
+    <bean id="i3xx.step.uno.deploy.DeployCmdCompleter" class="org.i3xx.step.command.uno.core.impl.DeployCmdCompleter"/>
     
-    <bean id="i3xx.step.uno.deploy.MandatorCompleter" class="org.i3xx.step.uno.core.impl.cmd.MandatorCompleter">
+    <bean id="i3xx.step.uno.deploy.MandatorCompleter" class="org.i3xx.step.command.uno.core.impl.MandatorCompleter">
     	<property name="bundleContext" ref="blueprintBundleContext"/>
     </bean>
 	

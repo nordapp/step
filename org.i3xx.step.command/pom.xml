@@ -160,13 +160,14 @@
 					<Bundle-Activator></Bundle-Activator>
 					
 					<Export-Package>
-						org.i3xx.step.command.zero.core.impl.cmd,
-						org.i3xx.step.command.uno.core.impl.cmd,
+						org.i3xx.step.command.zero.core.impl,
+						org.i3xx.step.command.uno.core.impl
 					</Export-Package>
 					<Import-Package>
 						org.i3xx.util.basic.core;version="${util.basic.version}",
 						org.i3xx.util.basic.io;version="${util.basic.version}",
 						org.i3xx.util.basic.platform;version="${util.basic.version}",
+						org.i3xx.util.basic.util.text;version="${util.basic.version}",
 						org.i3xx.util.general.setup.impl;version="${util.general.setup.version}",
 						org.i3xx.util.general.setup.model;version="${util.general.setup.version}",
 						org.i3xx.util.platform.impl;version="${util.platform.version}",
@@ -183,6 +184,7 @@
 						org.apache.karaf.shell.api.action.lifecycle, -->
 						org.apache.karaf.shell.commands,
 						org.apache.karaf.shell.console,
+						org.apache.karaf.shell.console.completer,
 						org.apache.shiro,
 						org.apache.shiro.authc,
 						org.apache.shiro.authz,
