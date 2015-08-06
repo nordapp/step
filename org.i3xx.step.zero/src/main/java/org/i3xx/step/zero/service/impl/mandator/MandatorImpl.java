@@ -174,7 +174,11 @@ public class MandatorImpl implements Mandator, ManagedService {
 	 * @return The property value
 	 */
 	public String getProperty(String key){
-		return properties.get(key);
+		String value = properties.get(key);
+		if(logger.isTraceEnabled()) {
+			logger.trace("Get property {}='{}'.", key, value);
+		}
+		return value;
 	}
 	
 	/**
