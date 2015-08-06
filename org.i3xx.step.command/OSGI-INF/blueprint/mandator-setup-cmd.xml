@@ -32,7 +32,7 @@
 		 !  Starts a new mandator instance
 		 !-->
         <command>
-            <action class="org.i3xx.step.zero.core.impl.cmd.StartMandatorCommand"/>
+            <action class="org.i3xx.step.command.zero.core.impl.StartMandatorCommand"/>
             <completers>
                 <ref component-id="zeroSetupCompleter"/>
             </completers>
@@ -42,7 +42,7 @@
 		 !  Stops a mandator instance
 		 !-->
         <command>
-            <action class="org.i3xx.step.zero.core.impl.cmd.StopMandatorCommand"/>
+            <action class="org.i3xx.step.command.zero.core.impl.StopMandatorCommand"/>
             <completers>
                 <ref component-id="zeroSetupCompleter"/>
             </completers>
@@ -52,7 +52,7 @@
 		 !  List all mandator instances
 		 !-->
         <command>
-            <action class="org.i3xx.step.zero.core.impl.cmd.ListMandatorCommand"/>
+            <action class="org.i3xx.step.command.zero.core.impl.ListMandatorCommand"/>
             <completers>
                 <ref component-id="zeroSetupCompleter"/>
             </completers>
@@ -62,7 +62,7 @@
 		 !  List all mandator configurations
 		 !-->
         <command>
-            <action class="org.i3xx.step.zero.core.impl.cmd.ListMandatorConfigCommand"/>
+            <action class="org.i3xx.step.command.zero.core.impl.ListMandatorConfigCommand"/>
             <completers>
                 <ref component-id="zeroSetupCompleter"/>
             </completers>
@@ -72,7 +72,7 @@
 		 !  Setup a new mandator
 		 !-->
         <command>
-            <action class="org.i3xx.step.zero.core.impl.cmd.SetupMandatorCommand"/>
+            <action class="org.i3xx.step.command.zero.core.impl.SetupMandatorCommand"/>
             <completers>
                 <ref component-id="zeroSetupCompleter"/>
             </completers>
@@ -82,7 +82,7 @@
 		 !  Destroy a mandator
 		 !-->
         <command>
-            <action class="org.i3xx.step.zero.core.impl.cmd.DestroyMandatorCommand"/>
+            <action class="org.i3xx.step.command.zero.core.impl.DestroyMandatorCommand"/>
             <completers>
                 <ref component-id="zeroSetupCompleter"/>
             </completers>
@@ -90,6 +90,6 @@
     </command-bundle>
 	
 	<!-- Completer for the command bundle -->
-    <bean id="zeroSetupCompleter" class="org.i3xx.step.zero.core.impl.cmd.SetupCompleter"/>
+    <bean id="zeroSetupCompleter" class="org.i3xx.step.command.zero.core.impl.SetupCompleter"/>
 	
 </blueprint>

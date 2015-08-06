@@ -32,7 +32,7 @@
 		 !  Deploys a resource
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.DeployStepCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.DeployStepCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.DeployCmdCompleter"/>
             </completers>
@@ -42,7 +42,7 @@
 		 !  Deploys a resource
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.DeployDefaultCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.DeployDefaultCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.DeployCmdCompleter"/>
             </completers>
@@ -52,7 +52,7 @@
 		 !  Deploys a resource
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.DeployResourcesCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.DeployResourcesCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.DeployCmdCompleter"/>
             </completers>
@@ -62,7 +62,7 @@
 		 !  Deploys a resource
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.DeployPropertiesCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.DeployPropertiesCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.DeployCmdCompleter"/>
             </completers>
@@ -72,7 +72,7 @@
 		 !  Deploys using a feature file
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.DeployFeatureCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.DeployFeatureCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.DeployCmdCompleter"/>
             </completers>
@@ -82,7 +82,7 @@
 		 !  Prints help
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.DeployHelpCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.DeployHelpCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.DeployCmdCompleter"/>
             </completers>
@@ -92,7 +92,7 @@
 		 !  Install file from a bundle
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.InstallCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.InstallCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -102,7 +102,7 @@
 		 !  (Re-)Initializes the engine script (after a cleanup)
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.InitCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.InitCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -112,7 +112,7 @@
 		 !  Starts the engine script
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.StartCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.StartCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -122,7 +122,7 @@
 		 !  Runs a deployed script
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.RunCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.RunCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -132,7 +132,7 @@
 		 !  Drops the engine
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.StopCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.StopCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -142,7 +142,7 @@
 		 !  Cleanup the engine (and the stores)
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.CleanupCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.CleanupCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -152,7 +152,7 @@
 		 !  Login to the engine (and the stores)
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.SessionLoginCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.SessionLoginCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -162,7 +162,7 @@
 		 !  Runs a session
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.SessionRunCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.SessionRunCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -172,7 +172,7 @@
 		 !  Calls a function
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.SessionCallCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.SessionCallCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -182,7 +182,7 @@
 		 !  Logout of a session
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.SessionLogoutCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.SessionLogoutCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
@@ -192,7 +192,7 @@
 		 !  Clears a session
 		 !-->
         <command>
-            <action class="org.i3xx.step.uno.core.impl.cmd.SessionClearCommand"/>
+            <action class="org.i3xx.step.command.uno.core.impl.SessionClearCommand"/>
             <completers>
                 <ref component-id="i3xx.step.uno.deploy.MandatorCompleter"/>
             </completers>
