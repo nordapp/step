@@ -1,0 +1,247 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.i3xx.step</groupId>
+  <artifactId>org.i3xx.step.command</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+  <url>http://maven.apache.org</url>
+  <name>NordApp OfficeBase :: command</name>
+  <description>Console commands for Step</description>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<project.inceptionYear>2014</project.inceptionYear>
+  </properties>
+  
+  <scm>
+  	<developerConnection>scm:git:https://github.com/nordapp/step</developerConnection>
+  	<tag>org.i3xx.step.command-0.0.0</tag>
+  </scm>
+  
+  <parent>
+    <groupId>org.i3xx.parent</groupId>
+    <artifactId>parent-step-project</artifactId>
+    <version>0.2.11-SNAPSHOT</version>
+  </parent>
+  
+  <dependencies>
+	<dependency>
+		<groupId>org.i3xx.util</groupId>
+		<artifactId>org.i3xx.util.basic</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.i3xx.util</groupId>
+		<artifactId>org.i3xx.util.platform</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.i3xx.util</groupId>
+		<artifactId>org.i3xx.util.general.setup</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.i3xx.step</groupId>
+		<artifactId>org.i3xx.step.zero</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.i3xx.step</groupId>
+		<artifactId>org.i3xx.step.uno</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>commons-beanutils</groupId>
+		<artifactId>commons-beanutils-core</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>commons-logging</groupId>
+		<artifactId>commons-logging</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>jline</groupId>
+		<artifactId>jline</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.mina</groupId>
+	    <artifactId>mina-core</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-core</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.sshd</groupId>
+	    <artifactId>sshd-core</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.felix</groupId>
+		<artifactId>org.apache.felix.configadmin</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.felix</groupId>
+	    <artifactId>org.apache.felix.fileinstall</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.jaas</groupId>
+	    <artifactId>org.apache.karaf.jaas.config</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.jaas</groupId>
+	    <artifactId>org.apache.karaf.jaas.modules</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.shell</groupId>
+	    <artifactId>org.apache.karaf.shell.console</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.karaf.jaas</groupId>
+	    <artifactId>org.apache.karaf.jaas.boot</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>org.osgi.core</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>org.osgi.compendium</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+	</dependency>
+	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.i3xx.eclipse.test</groupId>
+    	<artifactId>workspace</artifactId>
+    	<scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>maven-bundle-plugin</artifactId>
+			<version>2.3.7</version>
+			<extensions>true</extensions>
+			<configuration>
+				<instructions>
+					
+					<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+					<Bundle-Name>${project.name}</Bundle-Name>
+					<Bundle-Version>${project.version}</Bundle-Version>
+					<Bundle-Activator></Bundle-Activator>
+					
+					<Export-Package>
+						org.i3xx.step.command.zero.core.impl.cmd,
+						org.i3xx.step.command.uno.core.impl.cmd,
+					</Export-Package>
+					<Import-Package>
+						org.i3xx.util.basic.core;version="${util.basic.version}",
+						org.i3xx.util.basic.io;version="${util.basic.version}",
+						org.i3xx.util.basic.platform;version="${util.basic.version}",
+						org.i3xx.util.general.setup.impl;version="${util.general.setup.version}",
+						org.i3xx.util.general.setup.model;version="${util.general.setup.version}",
+						org.i3xx.util.platform.impl;version="${util.platform.version}",
+						org.i3xx.util.symbol.service.model;version="${util.symbol.version}",
+						org.i3xx.step.uno.core.impl.cmd;version="${step.uno.version}",
+						org.i3xx.step.uno.impl.service;version="${step.uno.version}",
+						org.i3xx.step.uno.model.service;version="${step.uno.version}",
+						org.i3xx.step.uno.model.daemon;version="${step.uno.version}",
+						org.i3xx.step.zero.core.impl.cmd;version="${step.zero.version}",
+						org.i3xx.step.zero.service.impl.mandator;version="${step.zero.version}",
+						org.i3xx.step.zero.service.model.mandator;version="${step.zero.version}",
+						org.apache.commons.codec.binary,
+						org.apache.karaf.shell.api.action,
+						org.apache.karaf.shell.api.console,
+						org.apache.karaf.shell.api.action.lifecycle,
+						org.apache.karaf.shell.commands,
+						org.apache.karaf.shell.console,
+						org.apache.shiro,
+						org.apache.shiro.authc,
+						org.apache.shiro.authz,
+						org.apache.shiro.cache,
+						org.apache.shiro.crypto,
+						org.apache.shiro.crypto.hash,
+						org.apache.shiro.mgt,
+						org.apache.shiro.realm,
+						org.apache.shiro.session,
+						org.apache.shiro.subject,
+						org.apache.shiro.util,
+						org.osgi.service.blueprint,
+						org.osgi.service.cm,
+						org.osgi.framework,
+						org.osgi.util.tracker,
+						org.slf4j
+					</Import-Package>
+					<Private-Package />
+					<!--<Export-Service></Export-Service>-->
+				</instructions>
+			</configuration>
+		</plugin>
+	</plugins>
+	
+	<resources>
+  		<resource>
+  			<directory />
+  			<includes>
+  				<include>OSGI-INF/**/*.*</include>
+  			</includes>
+  		</resource>
+  	</resources>
+  </build>
+  
+  <dependencyManagement>
+  	<dependencies>
+		<dependency>
+		    <groupId>org.apache.karaf.jaas</groupId>
+		    <artifactId>org.apache.karaf.jaas.config</artifactId>
+		    <version>3.0.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.karaf.jaas</groupId>
+		    <artifactId>org.apache.karaf.jaas.modules</artifactId>
+		    <version>3.0.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.karaf.jaas</groupId>
+		    <artifactId>org.apache.karaf.jaas.boot</artifactId>
+		    <version>3.0.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.karaf.shell</groupId>
+		    <artifactId>org.apache.karaf.shell.console</artifactId>
+		    <version>3.0.4</version>
+		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  
+</project>
+  
