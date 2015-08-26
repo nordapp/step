@@ -96,6 +96,8 @@ public class PropertyScanner {
 	 */
 	private void scan(Mandator mandator) {
 		
+		logger.debug("The mandator is '"+mandator+"'");
+		logger.debug("The mandator path is '"+mandator.getPath()+"'");
 		FilePath filePath = FilePath.append( mandator.getPath(), "data/page/file/bundle" );
 		File file = filePath.toFile();
 		
