@@ -68,14 +68,16 @@ public class PropertyScanner {
 		for(String mandatorId : ms.getMandatorList()){
 			
 			Mandator mandator = ms.getMandator(mandatorId);
-			if(mandator==null)
-				logger.warn("The mandator '"+mandatorId+"' is not available on this system.");
-			else
-				logger.debug("The mandator {} is available at the path '{}'.", mandatorId, mandator.getPath());
 			
-			//Avoid exception
-			if(mandator==null || mandator.getPath()==null)
+			if(mandator==null) {
+				logger.warn("The mandator '{}' is not available on this system.", mandatorId);
 				continue;
+			}else if(mandator.getPath()==null) {
+				logger.warn("The mandator '{}' is available but no path is set (path==null).", mandatorId);
+				continue;
+			}else{
+				logger.debug("The mandator {} is available at the path '{}'.", mandatorId, mandator.getPath());
+			}
 			
 			scan(mandator);
 		}//for
@@ -87,10 +89,15 @@ public class PropertyScanner {
 	 */
 	public void scan(String mandatorId) {
 		Mandator mandator = MandatorServiceImpl.getMandator(bundleContext, mandatorId);
-		if(mandator==null)
-			logger.warn("The mandator '"+mandatorId+"' is not available on this system.");
-		else
+		if(mandator==null) {
+			logger.warn("The mandator '{}' is not available on this system.", mandatorId);
+			return;
+		}else if(mandator.getPath()==null) {
+			logger.warn("The mandator '{}' is available but no path is set (path==null).", mandatorId);
+			return;
+		}else{
 			logger.debug("The mandator {} is available at the path '{}'.", mandatorId, mandator.getPath());
+		}
 		
 		scan(mandator);
 	}

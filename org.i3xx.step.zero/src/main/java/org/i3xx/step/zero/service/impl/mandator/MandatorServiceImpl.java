@@ -52,7 +52,7 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 	//the configuration base of the service
 	public static final String mandatorConfigName = "i3xx.step.zero.MandatorService";
 	
-	private Logger logger = LoggerFactory.getLogger(MandatorServiceImpl.class);
+	private static Logger logger = LoggerFactory.getLogger(MandatorServiceImpl.class);
 	
 	/** The osgi bundle context */
 	private BundleContext bundleContext;
@@ -348,9 +348,10 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 			logger.warn("The filter syntax is not valid.", e);
 		}
 		
-		if(ref!=null && ref.length>0)
+		if(ref!=null && ref.length>0) {
+			logger.debug("Mandator: '{}' references: {}", pid, ref.length);
 			mandator = (Mandator)bundleContext.getService(ref[0]);
-		
+		}
 		return mandator;
 	}
 	
@@ -372,9 +373,10 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 			throw new RuntimeException(e);
 		}
 		
-		if(ref!=null && ref.length>0)
+		if(ref!=null && ref.length>0) {
+			logger.debug("Mandator: '{}' references: {}", id, ref.length);
 			mandator = (Mandator)context.getService(ref[0]);
-		
+		}
 		return mandator;
 	}
 }
