@@ -323,8 +323,10 @@ public class MandatorServiceImpl implements ManagedServiceFactory, MandatorServi
 			logger.warn("The filter syntax is not valid.", e);
 		}
 		
-		if(ref!=null && ref.length>0)
+		if(ref!=null && ref.length>0) {
+			logger.debug("Mandator: '{}' references: {}", id, ref.length);
 			mandator = (Mandator)bundleContext.getService(ref[0]);
+		}
 		
 		return mandator;
 	}
