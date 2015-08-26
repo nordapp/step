@@ -73,6 +73,10 @@ public class PropertyScanner {
 			else
 				logger.debug("The mandator {} is available at the path '{}'.", mandatorId, mandator.getPath());
 			
+			//Avoid exception
+			if(mandator==null || mandator.getPath()==null)
+				continue;
+			
 			scan(mandator);
 		}//for
 		
@@ -96,8 +100,11 @@ public class PropertyScanner {
 	 */
 	private void scan(Mandator mandator) {
 		
-		logger.debug("The mandator is '"+mandator+"'");
-		logger.debug("The mandator path is '"+mandator.getPath()+"'");
+		//debugging
+		logger.debug( "The mandator is available '{}' the path is '{}'",
+				(mandator==null?"false":"true"), (mandator==null?"not available":
+					mandator.getPath()==null?"null":mandator.getPath()) );
+		
 		FilePath filePath = FilePath.append( mandator.getPath(), "data/page/file/bundle" );
 		File file = filePath.toFile();
 		
