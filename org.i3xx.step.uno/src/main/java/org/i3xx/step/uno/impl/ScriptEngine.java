@@ -207,6 +207,10 @@ public class ScriptEngine {
 				BigInteger id = new BigInteger(e.getName());
 				String source = store.readString(key, id);
 				
+				if(logger.isTraceEnabled()) {
+					logger.trace("Execute the script name: {}, id: {}", name, id);
+					logger.trace(source);
+				}
 				context.evaluateString(scope, source, name, line, null);
 			}//for
         
@@ -245,6 +249,10 @@ public class ScriptEngine {
 				String name = cache.getName(i);
 				String source = cache.read(i);
 				
+				if(logger.isTraceEnabled()) {
+					logger.trace("Execute the script name: {}", name);
+					logger.trace(source);
+				}
 				context.evaluateString(scope, source, name, line, null);
 			}//for
         
